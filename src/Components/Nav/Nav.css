@@ -32,11 +32,13 @@
 }
 
 .menu-header {
-    margin: 20px 0;
+    margin: 20px auto;
     font-size: 1.2em;
     cursor: pointer;
     padding-bottom: 5px;
     border-bottom: 2px solid transparent;
+    text-align: center;
+    width: fit-content;
 }
 
 .nav a {
@@ -64,4 +66,30 @@
 
 .menu-header-option b {
     padding: 5px 0;
+}
+
+.cart-item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    margin: 20px auto;
+    padding: 10px;
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.cart-item-wrapper img {
+    width: 75px;
+    height: 75px;
+}
+
+.text-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.text-box div {
+    margin: 5px auto;
 }

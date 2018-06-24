@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { setCart } from '../../ducks/reducer';
+import NavCartItem from './NavCartItem';
 
 class NavCart extends Component {
     constructor(props){
@@ -21,17 +22,27 @@ class NavCart extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        console.log(nextProps.cart)
             this.setState({
-                cartLength: nextProps.cart.length
+                cartLength: nextProps.cart.length,
+                cart: nextProps.cart
             })
     }
     
 
     render(){
+        let recentItems = this.state.cart;
+        if (this.state.cart.length > 3){
+            recentItems = this.state.cart.slice(0, 3);
+        }
+        const items = recentItems.map(item => {
+            return (
+                <NavCartItem item={item} key={item.product.id} />
+            )
+        })
         return (
             <div>
             <div className="menu-header">Cart ({ this.state.cartLength }) </div>
+            { items }
             </div>
         )
     }
