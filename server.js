@@ -22,11 +22,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.get('/api/getProducts', (req, res) => {
-    console.log('here')
     const db = req.app.get('db');
     db.getProducts().then(response => {
         res.send(response);
     }).catch(err => console.log(err))
+})
+
+app.post('/api/product', (req, res) => {
+    const db = req.app.get('db');
+    db.getProductInfo([req.body.id]).then(response => res.send(response));
+})
+
+app.post('/api/similarProducts', (req, res) => {
+    const db = req.app.get('db');
+    db.getSimilarProducts([req.body.theme, req.body.id]).then(response => res.send(response));
 })
 
 const port = 4040;

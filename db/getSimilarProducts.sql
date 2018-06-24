@@ -1,0 +1,1 @@
+select * from products where theme = $1 and id != $2;

@@ -1,0 +1,42 @@
+[
+    {
+       "id": 1,
+       "product_name": "Frank Reynolds",
+       "price": 5,
+       "quantity": 50,
+       "theme": "Film and TV",
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/73d02411-c451-4b78-af59-08beae51fdc5_frank-reynolds-coaster.png"
+    },
+    {
+       "id": 2,
+       "product_name": "JR Smith",
+       "price": 5,
+       "quantity": 50,
+       "theme": "Sports",
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/07830105-b0e5-4778-8b17-3adb51129b16_jrsmith-coaster.png"
+    },
+    {
+       "id": 3,
+       "product_name": "Tupac",
+       "price": 5,
+       "quantity": 50,
+       "theme": "Music",
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/62f98758-2d5f-4521-bf57-2b384e790328_tupac-coaster.png"
+    },
+    {
+       "id": 4,
+       "product_name": "Three Finger Jack",
+       "price": 5,
+       "quantity": 50,
+       "theme": "Nature",
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/f896d3af-26db-416c-a8f1-a8d03a67dd47_threefingee-coaster.png"
+    },
+    {
+       "id": 5,
+       "product_name": "Welly the Westie",
+       "price": 5,
+       "quantity": 50,
+       "theme": "Animals",
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/8d90357f-dd6a-425e-ad39-3e3fab8556c0_wellys-head-color-coaster.png"
+    }
+]
