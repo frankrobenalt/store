@@ -68,15 +68,20 @@
     padding: 5px 0;
 }
 
+.menu-sub {
+    text-align: center;
+}
+
 .cart-item-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: white;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 10px;
     color: black;
     width: 100%;
+    font-size: .8em;
     border-radius: 5px;
 }
 
@@ -92,4 +97,8 @@
 }
 .text-box div {
     margin: 5px auto;
+}
+
+.nav-cart-wrapper {
+    width: 95%;
 }

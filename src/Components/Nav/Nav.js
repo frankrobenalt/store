@@ -9,12 +9,6 @@ export default class Nav extends Component {
 
     }
 
-    appendProds(){
-        const appendable = document.getElementsByClassName('menu-header');
-        console.log(appendable)
-        appendable[0].classList.add('active');
-
-    }
     render(){
         return (
             <div className="nav">
@@ -22,7 +16,7 @@ export default class Nav extends Component {
                 <Link to={'/'}>
                     <div className="menu-header">Home</div>
                 </Link>
-                <div className="menu-header" onClick={()=>this.appendProds()}>Products</div>
+                <div className="menu-header">Products</div>
                     <div className="menu-header-option"><b>Coasters</b></div>
                     <div className="menu-header-option"><b>Stickers</b></div>
                     <div className="menu-header-option"><b>Tees & Hoodies</b></div>

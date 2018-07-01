@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 const { json } = require('body-parser');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
+const { stripe_id } = require('./config');
+const stripe = require('stripe')(stripe_id);
+console.log(stripe_id)
 const app = express();
 app.use(cors());
 app.use(flash());
@@ -36,6 +39,17 @@ app.post('/api/product', (req, res) => {
 app.post('/api/similarProducts', (req, res) => {
     const db = req.app.get('db');
     db.getSimilarProducts([req.body.theme, req.body.id]).then(response => res.send(response));
+})
+
+app.post('/api/payment', (req, res) => {
+    stripe.charges.create({
+        amount: 5000,
+        currency: "usd",
+        source: req.body.id,
+        description: 'test'
+      }, function(err, charge) {
+          console.log('ERROR', err, 'CHARGE', charge);
+      })
 })
 
 const port = 4040;

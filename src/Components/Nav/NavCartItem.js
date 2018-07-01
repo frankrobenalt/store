@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 export default function NavCartItem (item) {
-    console.log(item)
     return (
         <div className="cart-item-wrapper">
             <img src={ item.item.product.pic } alt={ item.item.product.product_name } />
