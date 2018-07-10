@@ -8,7 +8,6 @@ const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const { stripe_id } = require('./config');
 const stripe = require('stripe')(stripe_id);
-console.log(stripe_id)
 const app = express();
 app.use(cors());
 app.use(flash());
@@ -42,13 +41,25 @@ app.post('/api/similarProducts', (req, res) => {
 })
 
 app.post('/api/payment', (req, res) => {
+    console.log(req.body)
+    const db = req.app.get('db');
     stripe.charges.create({
-        amount: 5000,
+        amount: req.body.info.total * 100,
         currency: "usd",
-        source: req.body.id,
+        source: req.body.token.id,
         description: 'test'
       }, function(err, charge) {
           console.log('ERROR', err, 'CHARGE', charge);
+          if(err){ return res.send('an error occured', err) }
+          db.addOrder({
+              address: req.body.info.address,
+              address_linetwo: req.body.info.addressLineTwo,
+              name: `${req.body.info.firstName} ${req.body.info.lastName}`,
+              email: req.body.info.email,
+              orderInfo: req.body.info.cart
+          }).then(response => {
+              res.send('success');
+          })
       })
 })
 

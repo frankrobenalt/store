@@ -1,0 +1,126 @@
+form input, .location-search-input, .form-row input, .email {
+    padding: 15px;
+    font-size: 1.5em;
+    width: 100%;
+    margin: 20px auto;
+}
+
+form button {
+    text-align: center;
+    padding: 15px;
+    background-color: #6B2DE8;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.autocomplete-dropdown-container {
+    margin-top: -20px;
+}
+
+.checkout-wrapper {
+    /* border-radius: 5px; */
+    /* box-shadow: 0px 0px 5px lightgray; */
+}
+
+.address-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.address-form div:nth-of-type(2){
+    width: 100%;
+}
+
+.form-header {
+    font-size: 1.25em;
+    align-self: flex-start;
+}
+
+.small-input-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-input-cell {
+    display: flex;
+    flex-direction: column;
+    width: 30% !important;
+}
+
+.suggestion-item {
+    padding: 10px;
+    background: #DADADA !important;
+    width: 100%;
+}
+
+.suggestion-item--active {
+    background: #919191 !important;
+    padding: 10px;
+}
+
+.StripeElement {
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid grey;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.med-form-cell {
+    display: flex;
+    flex-direction: column;
+    width: 45% !important;
+}
+
+.order-summary-wrapper {
+    width: 60%;
+    margin: 0px auto 40px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px lightgray inset;
+    background-color: #fafafa;
+    border-radius: 10px;    
+}
+
+.order-summary-title {
+    font-size: 1.75em;
+    color: black;
+    text-align: center;
+}
+
+.summary-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.summary-info div {
+    margin: 10px auto;
+}
+
+.line {
+    height: 2px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: black;
+}
+
+.order-total {
+    font-size: 1.33em;
+}

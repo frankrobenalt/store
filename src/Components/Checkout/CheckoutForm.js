@@ -7,7 +7,10 @@ class CheckoutForm extends React.Component {
   render() {
     return (
       <Elements>
-        <InjectedCheckoutForm />
+        <InjectedCheckoutForm
+            setStatus={ this.props.setStatus }
+            setLoading={ this.props.setLoading }
+        />
       </Elements>
     );
   }

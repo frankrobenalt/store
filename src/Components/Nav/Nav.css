@@ -83,6 +83,7 @@
     width: 100%;
     font-size: .8em;
     border-radius: 5px;
+    position: relative;
 }
 
 .cart-item-wrapper img {
@@ -101,4 +102,15 @@
 
 .nav-cart-wrapper {
     width: 95%;
+}
+
+.nav-cart-remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    padding: 0 3px;
+    background: #272626;
+    color: white;
+    border-radius: 2px;
 }

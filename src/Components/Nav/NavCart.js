@@ -8,7 +8,6 @@ class NavCart extends Component {
     constructor(props){
         super(props);
         this.state = {
-            cartLength: this.props.cart.length,
             cart: [],
             recentItems: []
         }
@@ -27,7 +26,6 @@ class NavCart extends Component {
 
     componentWillReceiveProps(nextProps){
             this.setState({
-                cartLength: nextProps.cart.length,
                 cart: nextProps.cart,
                 recentItems: this.getRecentItems(nextProps.cart)
             })
@@ -36,9 +34,9 @@ class NavCart extends Component {
     getRecentItems(cart){
         let recentItems = cart;
         if (cart.length > 3){
-            recentItems = cart.slice(cart.length - 3, cart.length);
+            recentItems = cart.slice(0, 3);
         }
-        return recentItems.reverse();
+        return recentItems;
     }
 
     render(){
@@ -50,9 +48,11 @@ class NavCart extends Component {
         return (
             <div className="nav-cart-wrapper">
             <Link to={'/cart'}>
-                <div className="menu-header">Cart ({ this.state.cartLength } items) </div>
+                <div className="menu-header">Cart ({ this.state.cart.length } items) </div>
             </Link>
+            { this.state.cart.length > 0 &&
             <div className="menu-sub">Recent Items</div>
+            }
             { items }
             <Link to={'/checkout'}>
                 <div className="menu-header">Checkout</div>

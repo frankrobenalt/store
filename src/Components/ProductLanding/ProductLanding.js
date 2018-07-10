@@ -25,6 +25,7 @@ class ProductLanding extends Component{
 
         this.handleProductChange = this.handleProductChange.bind(this);
         this.updateSize = this.updateSize.bind(this);
+        this.updateQuantity = this.updateQuantity.bind(this);
     }
 
     componentDidMount(){
@@ -77,15 +78,26 @@ class ProductLanding extends Component{
         })
     }
 
+    updateQuantity(event){
+        this.setState({
+            quantity: event.target.value
+        })
+    }
+
     addToCart(state){
+        let newCart = JSON.parse(localStorage.getItem("cart"));
+        let id = JSON.parse(localStorage.getItem("cart_id"));
         const newProduct = {
             product: state.product,
             line: state.line,
             price: state.price,
-            size: state.size
+            size: state.size,
+            quantity: state.quantity,
+            cart_id: id
         }
-        let newCart = JSON.parse(localStorage.getItem("cart"));
         newCart.push(newProduct);
+        id++;
+        localStorage.setItem("cart_id", JSON.stringify(id));
         localStorage.setItem("cart", JSON.stringify(newCart));
         this.props.addToCart(newProduct);
     }
@@ -124,10 +136,6 @@ class ProductLanding extends Component{
                         </select>
                         </div>
                         }
-                        <div className="flex">
-                            <div className="">Quantity</div>
-                            <input type="number" name="quantity" defaultValue="1" />
-                        </div>
                         <div className="pp-price">$
                             { this.state.price }
                         </div>
