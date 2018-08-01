@@ -75,7 +75,6 @@
 .cart-item-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     background-color: white;
     margin: 10px auto;
     padding: 10px;
@@ -92,12 +91,12 @@
 }
 
 .text-box {
-    text-align: center;
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
 }
 .text-box div {
-    margin: 5px auto;
+    margin: 5px 0;
 }
 
 .nav-cart-wrapper {
@@ -106,10 +105,10 @@
 
 .nav-cart-remove {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 7.5px;
+    right: 7.5px;
     cursor: pointer;
-    padding: 0 3px;
+    padding: 1px 3px;
     background: #272626;
     color: white;
     border-radius: 2px;

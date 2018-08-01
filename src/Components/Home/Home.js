@@ -33,7 +33,7 @@ export default class Home extends Component{
       })
     return(
         <div className="main-container">
-<div className="section-header">New Products</div>
+<div className="section-header">Products</div>
         <div className="product-grid">
             { products }
         </div>
@@ -41,14 +41,14 @@ export default class Home extends Component{
         <div className="product-grid">
             { coasterSets }
         </div>
-        <div className="section-header">Tees &amp; Hoodies</div>
+        {/* <div className="section-header">Tees &amp; Hoodies</div>
+        <div className="product-grid">
+            { teesAndHoodies }
+        </div> */}
+        {/* <div className="section-header">Coloring Book</div>
         <div className="product-grid">
      
-        </div>
-        <div className="section-header">Coloring Book</div>
-        <div className="product-grid">
-     
-        </div>
+        </div> */}
         </div>
     )
 }

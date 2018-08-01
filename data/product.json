@@ -3,19 +3,39 @@
        "id": 1,
        "product_name": "Frank Reynolds",
        "price": 5,
-       "productLines": [ "coaster", "tee", "hoodie"],
+       "productLines": [
+           {
+               "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/73d02411-c451-4b78-af59-08beae51fdc5_frank-reynolds-coaster.png"
+           },
+           {
+               "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/386242dd-f0bf-4aac-ac9e-aaeee44c1c7b_frank-reynolds-tee.png"
+           },
+           {
+               "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/1a0bc33f-abd7-4f71-8910-4b8a324aa998_frank-reynolds-hoodie.png"
+           }
+       ],
        "quantity": 50,
        "theme": "Film and TV",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/73d02411-c451-4b78-af59-08beae51fdc5_frank-reynolds-coaster.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/ee5b732a-d05e-483b-b461-643fa0965f5a_frank-reynolds.png"
     },
     {
        "id": 2,
        "product_name": "JR Smith",
        "price": 5,
-       "productLines": ["tee", "hoodie"],       
+       "productLines": [
+        {
+            "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/501c95a4-f35b-4df1-afc5-089e3d18b746_jrsmith-coaster.png"
+        },
+        {
+            "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/f2b2ae49-228a-4b07-a273-46c670d7051e_jrsmith-tee.png"
+        },
+        {
+            "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/5750d903-aad4-40c0-ae48-e9880657714b_jrsmith-hoodie.png"
+        }
+    ],      
        "quantity": 50,
        "theme": "Sports",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/07830105-b0e5-4778-8b17-3adb51129b16_jrsmith-coaster.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/0d91b2ad-9f05-43c8-854a-f61c2ec5be4b_jrsmith.png"
     },
     {
        "id": 3,
@@ -79,6 +99,19 @@
         "quantity": 50,
         "theme": "Nature",
         "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/e3f0edaa-d4c2-4d72-b9e3-621942fe6f30_redwood-coaster.png"
+    },
+    {
+        "id": 10,
+        "product_name": "Crane in the Sun",
+        "productLines": ["tee", "hoodie", "coaster"],
+        "theme": "Nature",
+        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/7507ac77-9e7d-4b62-8bb4-e51a535dcf0e_crane.png"
+    },
+    {
+        "id": 11,
+        "product_name": "Yeezy",
+        "productLines": ["tee", "hoodie", "coaster"],
+        "theme": "Music",
+        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/3c666877-0671-4c92-917f-545a489e5294_yeezy.png"
     }
-
 ]

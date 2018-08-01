@@ -27,13 +27,15 @@ class AddressSection extends React.Component {
       handleSelect(address){
         geocodeByAddress(address)
           .then(results => {
-              console.log(results);
               this.props.updateAddress(results[0].formatted_address);
+              const city = results[0].address_components.filter(item => item.types.includes('locality'))[0].long_name;
+              const state = results[0].address_components.filter(item => item.types.includes('administrative_area_level_1'))[0].short_name;
+              const zip = results[0].address_components.filter(item => item.types.includes('postal_code'))[0].long_name;
               this.setState({
                   addressLineOne: `${results[0].address_components[0].long_name} ${results[0].address_components[1].long_name}`,
-                  city: results[0].address_components[2].long_name,
-                  state: results[0].address_components[4].short_name,
-                  zip: results[0].address_components[6].long_name 
+                  city,
+                  state,
+                  zip
               })
           })
         //       getLatLng(results[0]);

@@ -12,13 +12,15 @@ class CheckoutForm extends React.Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
-            loading: false,
             address: '',
-            firstName: 'smoo',
-            lastName: 'smoo',
+            firstName: '',
+            lastName: '',
             email: '',
             cart: [],
-            total: 0
+            total: 0,
+            inValidForm: true,
+            validForm: false,
+            loading: false
         }
     }
 
@@ -56,7 +58,8 @@ class CheckoutForm extends React.Component {
     // We don't want to let default form submission happen here, which would refresh the page.
     ev.preventDefault();
     this.setState({
-        loading: true
+        loading: true,
+        validForm: false
     });
     console.log('info:', ev.target)
     // Within the context of `Elements`, this call to createToken knows which Element to
@@ -68,7 +71,7 @@ class CheckoutForm extends React.Component {
           info: this.state
         }).then(response => {
             if (response.data === 'success'){
-              this.props.setStatus(true, null);
+              this.props.setStatus(true, null, this.state);
             } else {
               this.props.setStatus(null, true);  
             }
@@ -86,7 +89,6 @@ class CheckoutForm extends React.Component {
   };
 
   updateAddress(address){
-      console.log(address);
       this.setState({ address })
   }
 
@@ -109,7 +111,6 @@ class CheckoutForm extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
     <div className="checkout-wrapper">
         <OrderSummary />
@@ -131,20 +132,21 @@ class CheckoutForm extends React.Component {
             <div className="address-header">
                 Email
             </div>
-            <input className="email" type="text" name="email" id="email" onChange={this.handleEmailChange.bind(this)} />
+            <input className="email" type="email" name="email" id="email" onChange={this.handleEmailChange.bind(this)} />
         </div>
       <form onSubmit={this.handleSubmit}>
         <AddressSection
             updateAddress={this.updateAddress.bind(this)}
         />
         <CardSection />
-        { this.state.loading ?
+        { (this.state.firstName && this.state.lastName && this.state.address && this.state.email) 
+        ?
             <div className="center">
-            <button>Loading...</button>
+            <button>Confirm order</button>
             </div>
         :
             <div className="center">
-            <button>Confirm order</button>
+            <div className="fake-button invalid">Confirm order</div>
             </div>
         }
       </form>

@@ -47,10 +47,11 @@ app.post('/api/payment', (req, res) => {
         amount: req.body.info.total * 100,
         currency: "usd",
         source: req.body.token.id,
-        description: 'test'
+        description: `order for ${req.body.info.firstName} ${req.body.info.lastName}`,
+        receipt_email: req.body.info.email
       }, function(err, charge) {
           console.log('ERROR', err, 'CHARGE', charge);
-          if(err){ return res.send('an error occured', err) }
+          if(err){ return res.send('an error occured') }
           db.addOrder({
               address: req.body.info.address,
               address_linetwo: req.body.info.addressLineTwo,
@@ -59,6 +60,8 @@ app.post('/api/payment', (req, res) => {
               orderInfo: req.body.info.cart
           }).then(response => {
               res.send('success');
+          }).catch(error => {
+              res.send('db error')
           })
       })
 })
