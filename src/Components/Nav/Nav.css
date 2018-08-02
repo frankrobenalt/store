@@ -52,10 +52,14 @@
 
 .menu-header-option {
     text-align: left;
-    width: 75%;
     position: relative;
     /* overflow: hidden; */
     margin: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.menu-header-option:hover {
+    border-bottom: 2px solid white;
 }
 
 /* .menu-header .menu-header-option b {

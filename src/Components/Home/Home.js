@@ -15,6 +15,7 @@ export default class Home extends Component{
 
     componentDidMount(){
         // localStorage.setItem("cart", "[]");
+        window.scrollTo(0,0);
         this.setState({
             products: data
         })
@@ -37,7 +38,7 @@ export default class Home extends Component{
         <div className="product-grid">
             { products }
         </div>
-        <div className="section-header">Coaster Sets</div>
+        <div className="section-header">Coaster Set</div>
         <div className="product-grid">
             { coasterSets }
         </div>

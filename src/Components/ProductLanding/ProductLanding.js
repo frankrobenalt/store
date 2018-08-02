@@ -53,7 +53,6 @@ class ProductLanding extends Component{
             if(product.productLines[0]['hoodie']) line = 'hoodie';
         }
         let productPic = this.getNewPic(product, line);
-        console.log(productPic)
         let newPrice;
         if (line === 'coaster') newPrice = 5
         else if (line === 'tee') newPrice = 25
@@ -71,7 +70,6 @@ class ProductLanding extends Component{
 
     getNewPic(product, line){
         let newPic = product.productLines.filter(cur => cur[line])[0];
-        console.log(newPic)
         return newPic[line];
     }
 
@@ -109,10 +107,17 @@ class ProductLanding extends Component{
     }
 
     addToCart(state){
+        let pic;
+        state.product.productLines.map(cur => {
+            if(cur[state.line]){
+                pic = cur[state.line];
+            }
+        })
         let newCart = JSON.parse(localStorage.getItem("cart"));
         let id = JSON.parse(localStorage.getItem("cart_id"));
         const newProduct = {
             product: state.product,
+            pic,
             line: state.line,
             price: state.price,
             size: state.size,
@@ -156,8 +161,8 @@ class ProductLanding extends Component{
                         <ProductLines lines={ product.productLines } landing={true} id={ product.id } changeProd={this.handleProductChange} />
                         <div className="product-info-div big-text">{ this.state.line }</div>
                         { this.state.line !== 'coaster' &&
-                        <div className="flex">
-                        <div className="product-info-div">Size</div>
+                        <div className="flex product-info-div align-center">
+                        <div>Size</div>
                         <select name="size" id="size" onChange={ this.updateSize }>
                             <option value="small">small</option>
                             <option value="medium">medium</option>

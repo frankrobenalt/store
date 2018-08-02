@@ -12,6 +12,7 @@ class OrderSummary extends React.Component {
     }
 
     componentDidMount(){
+        window.scrollTo(0,0);                
         this.setState({
             cart: this.props.cart
         })

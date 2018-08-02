@@ -41,77 +41,165 @@
        "id": 3,
        "product_name": "Tupac",
        "price": 5,
-       "productLines": ["coaster", "tee"],       
+       "productLines": [
+        {
+            "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/e3ea4f2b-3120-4295-9eed-5a8b714fd4a1_tupac-coaster.png"
+        },
+        {
+            "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/edc1fabe-cbc6-4c4f-aaee-270b2489fc13_tupac-tee.png"
+        },
+        {
+            "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/06a06e78-b379-4c0e-86ad-c81ae26681fa_tupac-hoodie.png"
+        }
+    ],              
        "quantity": 50,
        "theme": "Music",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/62f98758-2d5f-4521-bf57-2b384e790328_tupac-coaster.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/bb6a38cc-7fc2-414e-ac07-4d7938b36544_tupac.png"
     },
     {
        "id": 4,
-       "product_name": "Three Finger Jack",
+       "product_name": "Fiji",
        "price": 5,
-       "productLines": ["coaster", "tee"],       
+       "productLines": [
+        {
+            "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/6df099c5-da45-414f-a556-b2eb907f0076_fiji-hoodie.png"
+        }
+    ],          
        "quantity": 50,
        "theme": "Nature",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/f896d3af-26db-416c-a8f1-a8d03a67dd47_threefingee-coaster.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/19255061-12e3-4662-a711-389776d51f6d_fiji.png"
     },
     {
        "id": 5,
        "product_name": "Welly the Westie",
        "price": 5,
-       "productLines": ["coaster", "tee"],       
+       "productLines": [ 
+           {
+               "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/8b22c591-45d6-4283-bff1-22bbb7d1ec98_wellys-head-coaster.png"
+           }, 
+           { 
+               "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/c46107ca-3cab-4ffb-b5a8-11fe6015559b_wellys-head-tee.png"
+           },
+           {
+               "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/8a0f247c-c809-45fd-a835-25e314c10002_wellys-head-hoodie.png"
+           }
+        ],       
        "quantity": 50,
        "theme": "Animals",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/8d90357f-dd6a-425e-ad39-3e3fab8556c0_wellys-head-color-coaster.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/9f4533e0-74fa-47ef-8237-7e1a4ed1e66b_wellys-head.png"
     },
     {
        "id": 6,
        "product_name": "Ali",
        "price": 5,
-       "productLines": ["coaster", "hoodie"],       
+       "productLines": [ 
+           {
+               "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/4fb7117b-6eb9-4a47-8814-a5f743f2c39f_ali-coaster.png"
+           }, 
+           {
+               "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/711294b0-ef3a-4fff-8299-7083914684ef_ali-hoodie.png"
+           },
+           {
+               "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/3577bea9-0250-4b7d-913d-e9a178706c97_ali-tee.png"
+           }
+        ],       
        "quantity": 50,
        "theme": "Sports",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/a27851ab-a80c-447d-be34-c129346a2ace_ali-coaster.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/498c27e1-68dd-48bc-8074-bcf8bc5e8eae_ali.png"
     },
     {
        "id": 7,
        "product_name": "Kendrick",
        "price": 5,
-       "productLines": ["tee", "hoodie"],       
+       "productLines": [ 
+           {
+               "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/4d864c40-89ea-43d4-aa84-ec3c5641bc8e_kenny-coaster.png"
+           }, 
+           { 
+               "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/2c957236-5566-404b-a088-0a7fe40a3ddb_kenny-tee.png"
+           },
+           {
+               "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/eefb14de-f076-4970-8471-ec00d083069a_kenny-hoodie.png"
+           }
+        ],       
        "quantity": 50,
        "theme": "Music",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/ad9be160-a5de-426a-816d-61834612e059_kenny-coaster.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/40228036-deb7-4ace-982e-53bdb30e9a3a_kenny.png"
     },
     {
        "id": 8,
        "product_name": "Django",
        "price": 5,
-       "productLines": ["coaster", "tee"],       
+       "productLines": [ 
+           {
+               "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/562ff52b-d990-4fcc-b106-ff5ab588c2af_django-coaster.png"
+           }, 
+           {
+               "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/1824a098-0301-4509-9bd0-11e3ac14ca5a_django-tee.png"
+           },
+           {
+               "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/1c029a5d-bb21-4985-99da-af28f258d6a2_django-hoodie.png"
+           }
+        ],       
        "quantity": 50,
        "theme": "Film and TV",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/9612f045-69d9-48f7-925d-5932ebdd05ed_django-coaster.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/d42a3297-c927-4dd9-9bed-5124dff122e4_django.png"
     },
     {
         "id": 9,
         "product_name": "Redwood",
         "price": 5,
-        "productLines": ["coaster", "hoodie"],
+        "productLines": [ 
+            {
+                "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/6b4af881-27d6-4468-8637-905c95f06717_redwood-coaster.png"
+            }, 
+            {
+                "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/2f537f46-c9d1-4d06-9321-648b88afa331_redwood-tee.png"
+            }
+        ],
         "quantity": 50,
         "theme": "Nature",
-        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/e3f0edaa-d4c2-4d72-b9e3-621942fe6f30_redwood-coaster.png"
+        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/18e96027-7e81-4f1d-beab-8c8187b9e374_redwood.png"
     },
     {
         "id": 10,
-        "product_name": "Crane in the Sun",
-        "productLines": ["tee", "hoodie", "coaster"],
+        "product_name": "Thai Crane",
+        "productLines": [ {"hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/8299b01b-261d-40bb-abe5-a4ab43bbd986_crane-hoodie.png"}],
         "theme": "Nature",
         "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/7507ac77-9e7d-4b62-8bb4-e51a535dcf0e_crane.png"
     },
     {
         "id": 11,
-        "product_name": "Yeezy",
-        "productLines": ["tee", "hoodie", "coaster"],
+        "product_name": "Yeezy Cheesin'",
+        "productLines": [ 
+            {
+                "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/09ed7cf1-9d4e-4d1c-906d-222771e1e59d_yeezy-coaster.png"
+            },
+            {
+                "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/966cc41e-6eda-4f26-a2ce-2742d6047326_yeezy-hoodie.png"
+            }, 
+            {
+                "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/253d8a24-1c3a-4ad5-90fd-74a382d9ed05_yeezy-tee.png"
+            }
+        ],
         "theme": "Music",
         "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/3c666877-0671-4c92-917f-545a489e5294_yeezy.png"
+    },
+    {
+        "id": 12,
+        "product_name": "Yeezy Muggin'",
+        "productLines": [ 
+            {
+                "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/dc731b27-2807-4fc2-b141-9870286bf76b_yeezy-mug-coaster.png"
+            },
+            {
+                "hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/c7a2fb5d-506c-4bac-9c34-fbc4059c0dcb_yeezy-mug-hoodie.png"
+            }, 
+            {
+                "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/ee35bb02-75c0-49a1-8b49-c2225918ecdd_yeezy-mug-tee.png"
+            }
+        ],
+        "theme": "Music",
+        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/5aeb1f1c-aff8-4951-abaa-3bdb4734c897_yeezy-mug.png"
     }
 ]

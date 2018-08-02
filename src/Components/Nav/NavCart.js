@@ -48,14 +48,14 @@ class NavCart extends Component {
         return (
             <div className="nav-cart-wrapper">
             <Link to={'/cart'}>
-                <div className="menu-header">Cart ({ this.state.cart.length } items) </div>
+                <div className="menu-header">cart ({ this.state.cart.length } items) </div>
             </Link>
             { this.state.cart.length > 0 &&
-            <div className="menu-sub">Recent Items</div>
+            <div className="menu-sub">recent items</div>
             }
             { items }
             <Link to={'/checkout'}>
-                <div className="menu-header">Checkout</div>
+                <div className="menu-header">checkout</div>
             </Link>
             </div>
         )

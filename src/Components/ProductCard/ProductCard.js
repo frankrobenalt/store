@@ -38,7 +38,7 @@ export default class ProductCard extends Component {
                     </div>
                     <div className="info-wrapper">
                         <div className="big">{ prod.product_name }</div>
-                        <div>Available as:</div> 
+                        <div>Products:</div> 
                         <ProductLines lines={ prod.productLines } id={ prod.id } />
                         <Link to={`/product/${prod.id}`}>
                         <div className="link">See More</div>

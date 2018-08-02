@@ -10,6 +10,7 @@ export default class Products extends Component{
     }
 
     componentDidMount(){
+        window.scrollTo(0,0);
         this.getProdInfo(this.props);
     }
 
@@ -22,8 +23,24 @@ export default class Products extends Component{
     }
 
     render(){
-        const theme = this.props.match.params.theme;
-        const productsFiltered = data.filter( prod => prod.theme == theme);
+        let theme = '';
+        let productsFiltered = [];
+        if(this.props.match.params.theme){
+            theme = this.props.match.params.theme;
+            productsFiltered = [];
+            data.forEach(item => {
+                item.productLines.map(cur => {
+                    for (var key in cur){
+                        if(key === theme){
+                            productsFiltered.push(item);
+                        }
+                    }
+                })
+            }, this);
+        } else {
+            theme = 'Product';
+            productsFiltered = data;
+        }
         const products = productsFiltered.map(product => {
             return (
                 <ProductCard prod={product} full={true} key={product.id} />
@@ -31,7 +48,7 @@ export default class Products extends Component{
         })
         return (
             <div className="main-container">
-                <div className="pp-title">{ theme }</div>
+                <div className="section-header">{ theme }s</div>
                 <div className="product-grid">
                     { products }
                 </div>

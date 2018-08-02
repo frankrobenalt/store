@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.align-center {
+    align-items: center;
+}
+
 .main-container {
     transition: 300ms transform;
     padding-left: 300px;

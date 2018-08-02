@@ -14,13 +14,23 @@ export default class Nav extends Component {
             <div className="nav">
                 <div className="logo-title">Crimson & Clover</div>
                 <Link to={'/'}>
-                    <div className="menu-header">Home</div>
+                    <div className="menu-header">home</div>
                 </Link>
-                <div className="menu-header">Products</div>
-                    <div className="menu-header-option"><b>Coasters</b></div>
-                    <div className="menu-header-option"><b>Stickers</b></div>
-                    <div className="menu-header-option"><b>Tees & Hoodies</b></div>
-                    <div className="menu-header-option"><b>Hats</b></div>
+                <Link to={'/products'}>
+                <div className="menu-header">products</div>
+                </Link>
+                    <Link to={'/products/coaster'}>
+                    <div className="menu-header-option"><b>coasters</b></div>
+                    </Link>
+                    <Link to={'/products/tee'}>
+                    <div className="menu-header-option"><b>tees</b></div>
+                    </Link>
+                    <Link to={'/products/hoodie'}>
+                    <div className="menu-header-option"><b>hoodies</b></div>
+                    </Link>
+                    <Link to={'/products/hat'}>
+                    <div className="menu-header-option"><b>hats</b></div>
+                    </Link>
                 <NavCart />
             </div>
         )

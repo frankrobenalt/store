@@ -13,10 +13,11 @@ class NavCartItem extends Component {
     }
 
     render(){
+        console.log(this.props.item)
     return (
         <div className="cart-item-wrapper">
             <div className="nav-cart-remove" onClick={ ()=> this.removeItem(this.props.item.cart_id) }>x</div>
-            <img src={ this.props.item.product.pic } alt={ this.props.item.product.product_name } />
+            <img src={ this.props.item.pic } alt={ this.props.item.product.product_name } />
             <div className="text-box">
             <div>
             { this.props.item.product.product_name } ({ this.props.item.line })

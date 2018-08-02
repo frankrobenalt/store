@@ -53,7 +53,7 @@ class CartLanding extends Component {
             return (
                 <div className="cart-landing-item-wrapper" key={Math.floor(Math.random() * Math.floor(100000))}>
                     <div className="remove" onClick={ ()=> this.removeItem(item.cart_id) }>Remove</div>
-                    <img src={ item.product.pic } alt="" />
+                    <img src={ item.pic } alt="" />
                     <div className="cart-text-wrapper">
                         <div>
                             { item.product.product_name }

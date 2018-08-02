@@ -14,7 +14,7 @@
 }
 
 .landing-row, .prod-container-overlay {
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 .landing-row > .prod-container {
