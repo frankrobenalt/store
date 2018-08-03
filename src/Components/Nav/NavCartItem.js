@@ -13,7 +13,6 @@ class NavCartItem extends Component {
     }
 
     render(){
-        console.log(this.props.item)
     return (
         <div className="cart-item-wrapper">
             <div className="nav-cart-remove" onClick={ ()=> this.removeItem(this.props.item.cart_id) }>x</div>

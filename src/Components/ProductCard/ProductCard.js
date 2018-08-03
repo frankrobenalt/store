@@ -27,15 +27,27 @@ export default class ProductCard extends Component {
             <div className="product-wrapper">
                 { this.props.full &&
                 <div>
-                    <div className="image">
-                        <Link to={`/product/${prod.id}`}>
-                        <div className="overlay">
-                            <div>{ prod.product_name }</div>
-                            <div>See More</div>
+                    { this.props.featured ?
+                        <div className="image">
+                            <Link to={`/product/${prod.id}/${prod.featured_key}`}>
+                            <div className="overlay">
+                                <div>{ prod.product_name }</div>
+                                <div>See More</div>
+                            </div>
+                            </Link>
+                            <img src={ prod.productLines[prod.featured_idx][prod.featured_key] } alt={ prod.product_name } />
                         </div>
-                        </Link>
-                        <img src={ prod.pic } alt={ prod.product_name } />
-                    </div>
+                        :
+                        <div className="image">
+                            <Link to={`/product/${prod.id}`}>
+                            <div className="overlay">
+                                <div>{ prod.product_name }</div>
+                                <div>See More</div>
+                            </div>
+                            </Link>
+                            <img src={ prod.pic } alt={ prod.product_name } />
+                        </div>
+                    }
                     <div className="info-wrapper">
                         <div className="big">{ prod.product_name }</div>
                         <div>Products:</div> 

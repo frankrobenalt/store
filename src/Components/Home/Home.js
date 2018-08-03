@@ -32,9 +32,20 @@ export default class Home extends Component{
               <ProductCard prod={prod} theme={true} key={prod.id} />
           )
       })
+      let featuredProducts = this.state.products.map( prod => {
+          if(prod.featured){
+              return (
+                <ProductCard prod={prod} full={true} key={prod.id} featured={true} />
+              )
+          }
+      });
     return(
         <div className="main-container">
-<div className="section-header">Products</div>
+<div className="section-header">featured products</div>
+        <div className="product-grid">
+            { featuredProducts }
+        </div>
+<div className="section-header">all products</div>
         <div className="product-grid">
             { products }
         </div>

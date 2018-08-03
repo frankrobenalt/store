@@ -35,7 +35,10 @@
     ],      
        "quantity": 50,
        "theme": "Sports",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/0d91b2ad-9f05-43c8-854a-f61c2ec5be4b_jrsmith.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/0d91b2ad-9f05-43c8-854a-f61c2ec5be4b_jrsmith.png",
+       "featured": true,
+       "featured_idx": 1,
+       "featured_key": "tee"
     },
     {
        "id": 3,
@@ -54,7 +57,10 @@
     ],              
        "quantity": 50,
        "theme": "Music",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/bb6a38cc-7fc2-414e-ac07-4d7938b36544_tupac.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/bb6a38cc-7fc2-414e-ac07-4d7938b36544_tupac.png",
+       "featured": true,
+       "featured_idx": 2,
+       "featured_key": "hoodie"
     },
     {
        "id": 4,
@@ -105,7 +111,10 @@
         ],       
        "quantity": 50,
        "theme": "Sports",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/498c27e1-68dd-48bc-8074-bcf8bc5e8eae_ali.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/498c27e1-68dd-48bc-8074-bcf8bc5e8eae_ali.png",
+       "featured": true,
+       "featured_idx": 1,
+       "featured_key": "hoodie"
     },
     {
        "id": 7,
@@ -143,7 +152,10 @@
         ],       
        "quantity": 50,
        "theme": "Film and TV",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/d42a3297-c927-4dd9-9bed-5124dff122e4_django.png"
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/d42a3297-c927-4dd9-9bed-5124dff122e4_django.png",
+       "featured": true,
+       "featured_idx": 2,
+       "featured_key": "hoodie"
     },
     {
         "id": 9,

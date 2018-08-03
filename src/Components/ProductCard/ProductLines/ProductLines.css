@@ -19,11 +19,13 @@
 
 .landing-row > .prod-container {
     width: 20%;
+    opacity: 0.8;
 }
 
 .prod-line-row img {
     width: 100%;
     margin: 0;
+    padding: 5px;
 }
 
 .prod-line-row div {
@@ -32,7 +34,7 @@
 }
 
 .prod-container {
-    box-shadow: 0px 0px 1px lightgray;
+    box-shadow: 0px 0px 1px #E4E4E4;
     position: relative;
     margin: 0 5px;
     cursor: pointer;
@@ -55,4 +57,13 @@
 
 .prod-container-overlay:hover {
     opacity: 1;
+}
+.landing-row.prod-container-overlay:hover {
+    opacity: 0;
+}
+
+.selected {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px #7A7A7A;
 }

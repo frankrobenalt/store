@@ -28,7 +28,6 @@ export default function reducer(state=initial_state, action){
 }
 
 export function setCart(payload){
-    console.log(payload)
     return {
         type: SET_CART,
         payload
