@@ -41,17 +41,23 @@ app.post('/api/similarProducts', (req, res) => {
 })
 
 app.post('/api/payment', (req, res) => {
-    console.log(req.body)
+    let meta = {};
+    req.body.info.cart.map(cur => {
+        meta[`${cur.cart_id}`] = cur.product.product_name + ' ' + cur.line + ' ' + cur.size
+    });
     const db = req.app.get('db');
     stripe.charges.create({
         amount: req.body.info.total * 100,
         currency: "usd",
         source: req.body.token.id,
         description: `order for ${req.body.info.firstName} ${req.body.info.lastName}`,
+        metadata: meta,
         receipt_email: req.body.info.email
       }, function(err, charge) {
-          console.log('ERROR', err, 'CHARGE', charge);
-          if(err){ return res.send('an error occured') }
+          if(err){ 
+            console.log('ERROR', err);
+            return res.send('an error occured') 
+          }
           db.addOrder({
               address: req.body.info.address,
               address_linetwo: req.body.info.addressLineTwo,

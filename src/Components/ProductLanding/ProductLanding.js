@@ -48,9 +48,9 @@ class ProductLanding extends Component{
         if (props.match.params.productLine){
             line = props.match.params.productLine;
         } else {
-            if(product.productLines[0]['coaster']) line = 'coaster';
-            if(product.productLines[0]['tee']) line = 'tee';
-            if(product.productLines[0]['hoodie']) line = 'hoodie';
+            if(product.productLines[product.productLines.length - 1]['coaster']) line = 'coaster';
+            if(product.productLines[product.productLines.length - 1]['tee']) line = 'tee';
+            if(product.productLines[product.productLines.length - 1]['hoodie']) line = 'hoodie';
         }
         let productPic = this.getNewPic(product, line);
         let newPrice;

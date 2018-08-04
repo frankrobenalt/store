@@ -1,7 +1,7 @@
 [
     {
        "id": 1,
-       "product_name": "Frank Reynolds",
+       "product_name": "frank reynolds",
        "price": 5,
        "productLines": [
            {
@@ -15,12 +15,12 @@
            }
        ],
        "quantity": 50,
-       "theme": "Film and TV",
+       "theme": "film and tv",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/ee5b732a-d05e-483b-b461-643fa0965f5a_frank-reynolds.png"
     },
     {
        "id": 2,
-       "product_name": "JR Smith",
+       "product_name": "jr smith",
        "price": 5,
        "productLines": [
         {
@@ -34,7 +34,7 @@
         }
     ],      
        "quantity": 50,
-       "theme": "Sports",
+       "theme": "sports",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/0d91b2ad-9f05-43c8-854a-f61c2ec5be4b_jrsmith.png",
        "featured": true,
        "featured_idx": 1,
@@ -42,7 +42,7 @@
     },
     {
        "id": 3,
-       "product_name": "Tupac",
+       "product_name": "tupac",
        "price": 5,
        "productLines": [
         {
@@ -56,7 +56,7 @@
         }
     ],              
        "quantity": 50,
-       "theme": "Music",
+       "theme": "music",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/bb6a38cc-7fc2-414e-ac07-4d7938b36544_tupac.png",
        "featured": true,
        "featured_idx": 2,
@@ -64,7 +64,7 @@
     },
     {
        "id": 4,
-       "product_name": "Fiji",
+       "product_name": "fiji",
        "price": 5,
        "productLines": [
         {
@@ -72,12 +72,12 @@
         }
     ],          
        "quantity": 50,
-       "theme": "Nature",
+       "theme": "nature",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/19255061-12e3-4662-a711-389776d51f6d_fiji.png"
     },
     {
        "id": 5,
-       "product_name": "Welly the Westie",
+       "product_name": "welly the westie",
        "price": 5,
        "productLines": [ 
            {
@@ -91,12 +91,12 @@
            }
         ],       
        "quantity": 50,
-       "theme": "Animals",
+       "theme": "nature",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/9f4533e0-74fa-47ef-8237-7e1a4ed1e66b_wellys-head.png"
     },
     {
        "id": 6,
-       "product_name": "Ali",
+       "product_name": "ali",
        "price": 5,
        "productLines": [ 
            {
@@ -110,7 +110,7 @@
            }
         ],       
        "quantity": 50,
-       "theme": "Sports",
+       "theme": "sports",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/498c27e1-68dd-48bc-8074-bcf8bc5e8eae_ali.png",
        "featured": true,
        "featured_idx": 1,
@@ -118,7 +118,7 @@
     },
     {
        "id": 7,
-       "product_name": "Kendrick",
+       "product_name": "kendrick",
        "price": 5,
        "productLines": [ 
            {
@@ -132,12 +132,12 @@
            }
         ],       
        "quantity": 50,
-       "theme": "Music",
+       "theme": "music",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/40228036-deb7-4ace-982e-53bdb30e9a3a_kenny.png"
     },
     {
        "id": 8,
-       "product_name": "Django",
+       "product_name": "django",
        "price": 5,
        "productLines": [ 
            {
@@ -151,7 +151,7 @@
            }
         ],       
        "quantity": 50,
-       "theme": "Film and TV",
+       "theme": "film and tv",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/d42a3297-c927-4dd9-9bed-5124dff122e4_django.png",
        "featured": true,
        "featured_idx": 2,
@@ -159,7 +159,7 @@
     },
     {
         "id": 9,
-        "product_name": "Redwood",
+        "product_name": "redwood",
         "price": 5,
         "productLines": [ 
             {
@@ -170,19 +170,19 @@
             }
         ],
         "quantity": 50,
-        "theme": "Nature",
+        "theme": "nature",
         "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/18e96027-7e81-4f1d-beab-8c8187b9e374_redwood.png"
     },
     {
         "id": 10,
-        "product_name": "Thai Crane",
+        "product_name": "thai crane",
         "productLines": [ {"hoodie": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/8299b01b-261d-40bb-abe5-a4ab43bbd986_crane-hoodie.png"}],
-        "theme": "Nature",
+        "theme": "nature",
         "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/7507ac77-9e7d-4b62-8bb4-e51a535dcf0e_crane.png"
     },
     {
         "id": 11,
-        "product_name": "Yeezy Cheesin'",
+        "product_name": "yeezy cheesin'",
         "productLines": [ 
             {
                 "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/09ed7cf1-9d4e-4d1c-906d-222771e1e59d_yeezy-coaster.png"
@@ -194,12 +194,12 @@
                 "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/253d8a24-1c3a-4ad5-90fd-74a382d9ed05_yeezy-tee.png"
             }
         ],
-        "theme": "Music",
+        "theme": "music",
         "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/3c666877-0671-4c92-917f-545a489e5294_yeezy.png"
     },
     {
         "id": 12,
-        "product_name": "Yeezy Muggin'",
+        "product_name": "yeezy muggin'",
         "productLines": [ 
             {
                 "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/dc731b27-2807-4fc2-b141-9870286bf76b_yeezy-mug-coaster.png"
@@ -211,7 +211,7 @@
                 "tee": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/ee35bb02-75c0-49a1-8b49-c2225918ecdd_yeezy-mug-tee.png"
             }
         ],
-        "theme": "Music",
+        "theme": "music",
         "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/5aeb1f1c-aff8-4951-abaa-3bdb4734c897_yeezy-mug.png"
     }
 ]

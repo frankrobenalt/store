@@ -32,7 +32,7 @@ export default class ProductCard extends Component {
                             <Link to={`/product/${prod.id}/${prod.featured_key}`}>
                             <div className="overlay">
                                 <div>{ prod.product_name }</div>
-                                <div>See More</div>
+                                <div>see more</div>
                             </div>
                             </Link>
                             <img src={ prod.productLines[prod.featured_idx][prod.featured_key] } alt={ prod.product_name } />
@@ -42,7 +42,7 @@ export default class ProductCard extends Component {
                             <Link to={`/product/${prod.id}`}>
                             <div className="overlay">
                                 <div>{ prod.product_name }</div>
-                                <div>See More</div>
+                                <div>see more</div>
                             </div>
                             </Link>
                             <img src={ prod.pic } alt={ prod.product_name } />
@@ -50,10 +50,10 @@ export default class ProductCard extends Component {
                     }
                     <div className="info-wrapper">
                         <div className="big">{ prod.product_name }</div>
-                        <div>Products:</div> 
+                        <div>products:</div> 
                         <ProductLines lines={ prod.productLines } id={ prod.id } />
                         <Link to={`/product/${prod.id}`}>
-                        <div className="link">See More</div>
+                        <div className="link">see more</div>
                         </Link>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ export default class ProductCard extends Component {
                     <div className="info-wrapper">
                         <div className="big">{ prod.theme }</div>
                         <Link to={`/products/${prod.theme}`}>
-                        <div className="link">See All</div>
+                        <div className="link">see all</div>
                         </Link>
                     </div>
                 </div>

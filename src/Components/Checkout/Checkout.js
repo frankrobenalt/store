@@ -24,6 +24,7 @@ class Checkout extends Component {
 
 
     setStatus(success, failure, info){
+        window.scrollTo(0,0);
         if(success){
             this.setState({
                 success: true,
@@ -43,7 +44,7 @@ class Checkout extends Component {
         const items = this.state.orderSummary.cart.map((item, idx) => {
             return (
                 <div className="cart-landing-item-wrapper" key={Math.floor(Math.random() * Math.floor(100000))}>
-                    <img src={ item.product.pic } alt="" />
+                    <img src={ item.pic } alt="" />
                     <div className="cart-text-wrapper">
                         <div>
                             { item.product.product_name }

@@ -6,6 +6,11 @@
     align-items: center;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .main-container {
     transition: 300ms transform;
     padding-left: 300px;

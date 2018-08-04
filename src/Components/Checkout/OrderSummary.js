@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import { removeFromCart } from '../../ducks/reducer';
 
 class OrderSummary extends React.Component {
     constructor(props){
@@ -26,6 +27,13 @@ class OrderSummary extends React.Component {
         }
     }
 
+    removeItem(idx){
+        let newCart = this.props.cart;
+        newCart = newCart.filter(item => item.cart_id != idx);        
+        localStorage.setItem("cart", JSON.stringify(newCart));   
+        this.props.removeFromCart(idx);
+    }
+
     render(){
         const subtotal = this.state.cart.reduce((acc, cur) => {
             return acc += cur.price
@@ -35,11 +43,37 @@ class OrderSummary extends React.Component {
         if(subtotal > 100){
             shipping = 0;
         }
+        const items = this.state.cart.map((item, idx) => {
+            return (
+                <div className="cart-landing-item-wrapper" key={Math.floor(Math.random() * Math.floor(100000))}>
+                    <div className="remove" onClick={ ()=> this.removeItem(item.cart_id) }>Remove</div>
+                    <img src={ item.pic } alt="" />
+                    <div className="cart-text-wrapper">
+                        <div>
+                            { item.product.product_name }
+                        </div>
+                        { item.line === 'coaster' ?
+                        <div>
+                            { item.line } 
+                        </div>
+                            :
+                        <div>
+                            { item.line } ({ item.size })
+                        </div>
+                        }
+                        <div>
+                            ${ item.price }
+                        </div>
+                    </div>
+                </div>
+            )
+        })
         return (
             <div className="order-summary-wrapper">
                 <div className="order-summary-title">
                     Order Summary
                 </div>
+                { items }
                 <div className="summary-info">
                     <div>
                         Subtotal: ${ subtotal }
@@ -50,6 +84,14 @@ class OrderSummary extends React.Component {
                     <div>
                         Shipping: ${ shipping }
                     </div>
+                    { subtotal <= 100 &&
+                        <div className="flex-column align-center">
+                            <div>*free shipping on orders over $100</div>
+                            <Link to={'/products'}>
+                            continue shopping
+                            </Link>
+                        </div>
+                    }
                     <div className="line"></div>
                     <div className="order-total">
                         Total: ${ subtotal + taxes + shipping }
@@ -60,4 +102,4 @@ class OrderSummary extends React.Component {
     }
 }
 
-export default withRouter(connect(state=>state, null)(OrderSummary));
+export default withRouter(connect(state=>state, { removeFromCart })(OrderSummary));

@@ -76,24 +76,32 @@ class CartLanding extends Component {
         })
         return (
             <div className="main-container">
-                <div className="section-header">Cart</div>
+                <div className="section-header">cart</div>
                 <div className="cart-container">
                     <div className="cart">
                         { items }
                     </div>
                     <div className="checkout">
                         <div>
-                            Checkout
+                            checkout
                         </div>
                         <div>
-                            Subtotal: <span>${ this.state.total }</span>
+                            subtotal: <span>${ this.state.total }</span>
                         </div>
                         <div>
-                            *Excluding tax & shipping
+                            *excluding tax & shipping
                         </div>
+                        { this.state.total <= 100 &&
+                            <div className="flex-column align-center">
+                                <div>*free shipping on orders over $100</div>
+                                <Link to={'/products'}>
+                                    continue shopping
+                                </Link>
+                            </div>
+                        }
                         <Link to={'/checkout'}>
                             <div className="checkout-btn">
-                                Checkout
+                                checkout
                             </div>
                         </Link>
                     </div>
