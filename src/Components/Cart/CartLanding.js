@@ -16,6 +16,7 @@ class CartLanding extends Component {
     }
 
     componentDidMount(){
+        window.scrollTo(0,0);
         let total = 0;
         if (this.props.cart) {
             this.props.cart.map(cur => {
@@ -52,7 +53,7 @@ class CartLanding extends Component {
         const items = this.state.cart.map((item, idx) => {
             return (
                 <div className="cart-landing-item-wrapper" key={Math.floor(Math.random() * Math.floor(100000))}>
-                    <div className="remove" onClick={ ()=> this.removeItem(item.cart_id) }>Remove</div>
+                    <div className="remove" onClick={ ()=> this.removeItem(item.cart_id) }>remove</div>
                     <img src={ item.pic } alt="" />
                     <div className="cart-text-wrapper">
                         <div>
@@ -91,14 +92,6 @@ class CartLanding extends Component {
                         <div>
                             *excluding tax & shipping
                         </div>
-                        { this.state.total <= 100 &&
-                            <div className="flex-column align-center">
-                                <div>*free shipping on orders over $100</div>
-                                <Link to={'/products'}>
-                                    continue shopping
-                                </Link>
-                            </div>
-                        }
                         <Link to={'/checkout'}>
                             <div className="checkout-btn">
                                 checkout

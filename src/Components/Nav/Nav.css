@@ -24,11 +24,19 @@
 } */
 
 .logo-title {
-    margin: 40px 0;
+    /* background-color: #2E2E2E; */
     padding-bottom: 20px;
-    border-bottom: 3px solid white;
-    width: 90%;
+    width: 100%;
     text-align: center;
+    font-size: 2.5em;
+    z-index: 3;
+}
+
+.logo-img {
+    width: 100px;
+    margin-bottom: -25px;
+    margin-top: 20px;
+    z-index: 2;
 }
 
 .menu-header {

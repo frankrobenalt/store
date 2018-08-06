@@ -12,7 +12,10 @@ export default class Nav extends Component {
     render(){
         return (
             <div className="nav">
-                <div className="logo-title">Crimson & Clover</div>
+                <div className="flex-column align-center">
+                <img  className="logo-img" src="https://s3.amazonaws.com/usc-cache.salvationarmy.org/7507ac77-9e7d-4b62-8bb4-e51a535dcf0e_crane.png" alt="logo" />
+                <div className="logo-title">yawa</div>
+                </div>
                 <Link to={'/'}>
                     <div className="menu-header">home</div>
                 </Link>

@@ -42,9 +42,15 @@ export default class Products extends Component{
             productsFiltered = data;
         }
         const products = productsFiltered.map(product => {
-            return (
-                <ProductCard prod={product} full={true} key={product.id} />
+        if(this.props.match.params.theme){
+                return (
+                    <ProductCard prod={product} filter={theme} full={false} key={product.id} />
             )
+        } else {
+            return (
+                    <ProductCard prod={product} full={true} key={product.id} />
+            )
+        }
         })
         return (
             <div className="main-container">
