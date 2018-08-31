@@ -157,7 +157,7 @@ class ProductLanding extends Component{
                     <img src={ this.state.productPic } alt={ product.product_name } />
                     <div className="product-info">
                         <div className="pp-title product-info-div">{ product.product_name }</div>
-                        <div className="product-info-div">Products:</div>
+                        <div className="product-info-div">products:</div>
                         <ProductLines lines={ product.productLines } landing={true} id={ product.id } line={this.state.line} changeProd={this.handleProductChange} />
                         <div className="product-info-div big-text">{ this.state.line }</div>
                         { this.state.line !== 'coaster' &&

@@ -54,9 +54,6 @@ class NavCart extends Component {
             <div className="menu-sub">recent items</div>
             }
             { items }
-            <Link to={'/checkout'}>
-                <div className="menu-header">checkout</div>
-            </Link>
             </div>
         )
     }

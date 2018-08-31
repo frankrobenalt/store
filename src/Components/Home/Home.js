@@ -49,10 +49,10 @@ export default class Home extends Component{
         <div className="product-grid">
             { products }
         </div>
-        <div className="section-header">Coaster Set</div>
+        {/* <div className="section-header">Coaster Set</div>
         <div className="product-grid">
             { coasterSets }
-        </div>
+        </div> */}
         {/* <div className="section-header">Tees &amp; Hoodies</div>
         <div className="product-grid">
             { teesAndHoodies }

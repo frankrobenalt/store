@@ -1,3 +1,9 @@
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+}
+
 .flex {
     display: flex;
 }
@@ -13,17 +19,19 @@
 
 .main-container {
     transition: 300ms transform;
-    padding-left: 300px;
     width: 100%;
     max-width: 1425px;
-    margin: 40px auto;
+    /* margin: 40px auto; */
+    padding: 0 20px;
 }
 
 .product-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px;
     box-shadow: 0px 0px 10px lightgray inset;
     background-color: #fafafa;
     border-radius: 10px;

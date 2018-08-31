@@ -42,14 +42,17 @@ class ProductCard extends Component {
         }
     }
 
-    addToCart(state){
-        let pic;
-        let line = this.props.filter;
+    addToCart(state, featured_line){
+        let pic, line, size;
+        if(this.props.filter){ line = this.props.filter };
+        if(featured_line){ line = featured_line }
         state.product.productLines.map(cur => {
             if(cur[line]){
                 pic = cur[line];
             }
         })
+        if(state.size){ size = state.size }
+        if(!state.size){ size = 'small' }
         let newCart = JSON.parse(localStorage.getItem("cart"));
         let id = JSON.parse(localStorage.getItem("cart_id"));
         let price;
@@ -61,7 +64,7 @@ class ProductCard extends Component {
             pic,
             line,
             price,
-            size: state.size,
+            size,
             cart_id: id
         }
         newCart.push(newProduct);
@@ -144,7 +147,7 @@ class ProductCard extends Component {
                             { prod.featured_key === 'tee' && <span>25</span> }
                             { prod.featured_key === 'hoodie' && <span>45</span> }
                         </div>
-                        <div className="add-to-cart" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
+                        <div className="add-to-cart" onClick={ () => this.addToCart(this.state, prod.featured_key) }>Add To Cart</div>
                     </div>
                     </div>
                     }
