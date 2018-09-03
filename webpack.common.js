@@ -25,9 +25,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Production',
-      template: 'public/index.html',      
-      filename: 'index.html'
+      title: 'Production'
     }),
     new webpack.HotModuleReplacementPlugin()
   ],
