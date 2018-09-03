@@ -6,13 +6,13 @@ const bodyParser = require('body-parser');
 const { json } = require('body-parser');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
-const { stripe_id } = process.env;
+const { stripe_id } = require('./config');
 const stripe = require('stripe')(stripe_id);
 const app = express();
 app.use(cors());
 app.use(flash());
-const { secret } = process.env;
-const { connectionString } = process.env;
+const { secret } = require('./config');
+const { connectionString } = require('./config');
 const massiveConnection = massive(connectionString).then(db=>app.set('db', db)).catch(err => console.log(err) );
 app.use(session({
     secret,

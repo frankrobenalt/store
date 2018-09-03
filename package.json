@@ -1,13 +1,10 @@
 {
   "name": "store",
   "private": true,
-  "engines": {
-    "node": "8.10.0"
-  },
   "proxy": "http://localhost:4040/api",
   "scripts": {
-    "start": "node server.js",
-    "postinstall": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
     "test": "jest"
   },
   "dependencies": {
@@ -29,11 +26,7 @@
     "react-router-dom": "^4.3.1",
     "react-stripe-elements": "^2.0.0",
     "redux": "^4.0.0",
-    "stripe": "^6.1.1",
-    "webpack": "^4.11.0",
-    "webpack-cli": "^3.0.2",
-    "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.4"
+    "stripe": "^6.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
