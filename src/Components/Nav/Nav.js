@@ -30,7 +30,7 @@ export default class Nav extends Component {
                     <div className="menu-header-option"><b>tees</b></div>
                     </Link>
                     <Link to={'/products/hoodie'}>
-                    <div className="menu-header-option"><b>hoodies</b></div>
+                    <div className="menu-header-option"><b>Hoodies</b></div>
                     </Link>
                     {/* <Link to={'/products/hat'}>
                     <div className="menu-header-option"><b>hats</b></div>

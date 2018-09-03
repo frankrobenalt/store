@@ -141,6 +141,7 @@
     }
     .product-grid {
         grid-template-columns: 1fr;
+        width: 90%;
     }
     .section-header {
         margin: 20px 0;
@@ -151,6 +152,7 @@
         grid-template-rows: .75fr 1fr;
         grid-template-columns: none;
         margin: 20px auto;
+        width: 90%;
     }
     .pp-title {
         margin: 10px 0;
