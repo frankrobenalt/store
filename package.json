@@ -1,5 +1,5 @@
 {
-  "name": "store",
+  "name": "storedoe",
   "private": true,
   "proxy": "http://localhost:4040/api",
   "scripts": {
