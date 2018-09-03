@@ -1,6 +1,9 @@
 {
   "name": "store",
   "private": true,
+  "engines": {
+    "node": "8.10.0"
+  },
   "proxy": "http://localhost:4040/api",
   "scripts": {
     "start": "node server.js",
