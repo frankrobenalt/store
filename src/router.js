@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //import components here
-import Home from './components/Home/Home';
-import ProductLanding from './components/ProductLanding/ProductLanding';
-import Products from './components/Products/Products';
-import CartLanding from './components/Cart/CartLanding';
-import Checkout from './components/Checkout/Checkout';
+import Home from './Components/Home/Home';
+import ProductLanding from './Components/ProductLanding/ProductLanding';
+import Products from './Components/Products/Products';
+import CartLanding from './Components/Cart/CartLanding';
+import Checkout from './Components/Checkout/Checkout';
 
 export default (
 
@@ -16,7 +16,6 @@ export default (
             <Route component={ Products } exact path="/products/:theme?" />
             <Route component={ CartLanding } exact path="/cart" />
             <Route component={ Checkout } exact path="/checkout" />
-            <Redirect to="/" />
         </Switch>
 
 )
