@@ -13,11 +13,10 @@ const stripe = require('stripe')(stripe_id);
 const app = express();
 app.use(cors());
 app.use(flash());
-const secret = process.env.secret;
 const connectionString = process.env.connectionString;
 const massiveConnection = massive(connectionString).then(db=>app.set('db', db)).catch(err => console.log(err) );
 app.use(session({
-    secret,
+    secret: process.env.secret,
     resave: true,
     saveUninitialized: true
 }));
