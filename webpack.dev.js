@@ -7,5 +7,8 @@ module.exports = merge(common, {
     contentBase: './public',
     port: 8080,
     publicPath: "http://localhost:8080/dist"
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 });

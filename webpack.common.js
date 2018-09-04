@@ -26,8 +26,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Production'
-    }),
-    new webpack.HotModuleReplacementPlugin()
+    })
   ],
   resolve: { extensions: ['*', '.js', '.jsx'] },  
   output: {
