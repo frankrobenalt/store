@@ -20,6 +20,8 @@ class NavCart extends Component {
                 cart,
                 recentItems: this.getRecentItems(cart) 
         });
+        } else {
+            cart = []
         }
         this.props.setCart(cart);
     }
