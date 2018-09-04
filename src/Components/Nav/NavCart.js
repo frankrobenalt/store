@@ -28,10 +28,12 @@ class NavCart extends Component {
     }
 
     componentWillReceiveProps(nextProps){
+        if(nextProps !== this.props){
             this.setState({
                 cart: nextProps.cart,
                 recentItems: this.getRecentItems(nextProps.cart)
             })
+        }
     }
     
     getRecentItems(cart){
