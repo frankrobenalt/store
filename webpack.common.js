@@ -2,6 +2,8 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require("webpack");
+const bundlePath = path.resolve(__dirname, "dist");
+
 module.exports = {
   entry: './src/index.js',
   module: {
@@ -31,8 +33,7 @@ module.exports = {
   resolve: { extensions: ['*', '.js', '.jsx'] },  
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/public/'    
+    publicPath: bundlePath    
   },
   stats: {
       children: false
