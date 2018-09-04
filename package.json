@@ -4,7 +4,7 @@
   "proxy": "http://localhost:4040/api",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
     "test": "jest",
     "prod": "NODE_ENV=production node server.js"    
   },
