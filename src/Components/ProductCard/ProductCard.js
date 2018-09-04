@@ -53,7 +53,12 @@ class ProductCard extends Component {
         })
         if(state.size){ size = state.size }
         if(!state.size){ size = 'small' }
-        let newCart = JSON.parse(localStorage.getItem("cart"));
+        let newCart
+        if (JSON.parse(localStorage.getItem("cart"))){
+            newCart = JSON.parse(localStorage.getItem("cart"));
+        } else {
+            newCart = []
+        }
         let id = JSON.parse(localStorage.getItem("cart_id"));
         let price;
         if(line === 'coaster'){ price = 5 }

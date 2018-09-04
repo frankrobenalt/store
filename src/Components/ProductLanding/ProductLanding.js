@@ -113,7 +113,12 @@ class ProductLanding extends Component{
                 pic = cur[state.line];
             }
         })
-        let newCart = JSON.parse(localStorage.getItem("cart"));
+        let newCart
+        if (JSON.parse(localStorage.getItem("cart"))){
+            newCart = JSON.parse(localStorage.getItem("cart"));
+        } else {
+            newCart = []
+        }
         let id = JSON.parse(localStorage.getItem("cart_id"));
         const newProduct = {
             product: state.product,
