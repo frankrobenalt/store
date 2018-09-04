@@ -31,7 +31,7 @@ module.exports = {
     new HtmlWebpackPlugin({
         title: 'yawa.store',
         template: "./public/index.html",
-        filename: "./index.html"
+        filename: "index.html"
       })
   ],
   resolve: { extensions: ['*', '.js', '.jsx'] },  
