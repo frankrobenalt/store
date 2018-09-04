@@ -29,11 +29,10 @@ module.exports = {
     })
   ],
   resolve: { extensions: ['*', '.js', '.jsx'] },  
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/'
-  },
+    output: {
+        filename: 'app.bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
   stats: {
       children: false
   }
