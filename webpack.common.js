@@ -26,13 +26,13 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'yawa.store'
-    }),
-    new webpack.HotModuleReplacementPlugin()
+    })
   ],
   resolve: { extensions: ['*', '.js', '.jsx'] },  
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist/')
+    publicPath: '/'
   },
   stats: {
       children: false
