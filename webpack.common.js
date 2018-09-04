@@ -33,5 +33,8 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist/')
+  },
+  stats: {
+      children: false
   }
 };
