@@ -82,6 +82,6 @@ app.post('/api/payment', (req, res) => {
 })
 
 const port = 4040;
-app.listen(port, ()=> {
+app.listen(process.env.port || port, ()=> {
     console.log(`LISTENING ON PORT: ${port}`);
 });
