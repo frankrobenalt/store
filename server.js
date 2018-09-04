@@ -13,7 +13,7 @@ const stripe = require('stripe')(stripe_id);
 const app = express();
 app.use(cors());
 app.use(flash());
-const connectionString = process.env.connectionString;
+const connectionString = process.env.DATABASE_URL;
 const massiveConnection = massive(connectionString).then(db=>app.set('db', db)).catch(err => console.log(err) );
 app.use(session({
     secret: process.env.secret,
