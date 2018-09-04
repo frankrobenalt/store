@@ -11,6 +11,9 @@ const flash = require('connect-flash');
 const stripe_id = process.env.stripe_id;
 const stripe = require('stripe')(stripe_id);
 const app = express();
+
+app.engine('html', require('ejs').renderFile);
+
 app.use(cors());
 app.use(flash());
 const connectionString = process.env.DATABASE_URL;
@@ -23,6 +26,9 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(express.static(`${__dirname}/public`));
+
 
 app.get('/api/getProducts', (req, res) => {
     const db = req.app.get('db');
