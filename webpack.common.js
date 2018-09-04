@@ -3,7 +3,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require("webpack");
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+      app: './src/index.js'
+  },
   module: {
     rules: [
       {
@@ -32,8 +34,5 @@ module.exports = {
     output: {
         filename: 'app.bundle.js',
         path: path.resolve(__dirname, 'dist')
-    },
-  stats: {
-      children: false
-  }
+    }
 };
