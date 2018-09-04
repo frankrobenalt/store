@@ -2,8 +2,6 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require("webpack");
-const bundlePath = path.resolve(__dirname, "dist");
-
 module.exports = {
   entry: './src/index.js',
   module: {
@@ -27,13 +25,14 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Store'
-    })
+      title: 'yawa.store'
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: { extensions: ['*', '.js', '.jsx'] },  
   output: {
     filename: 'bundle.js',
-    publicPath: bundlePath    
+    path: path.resolve(__dirname, 'dist/')
   },
   stats: {
       children: false
