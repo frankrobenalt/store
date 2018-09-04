@@ -14,15 +14,16 @@ class NavCart extends Component {
     }
 
     componentDidMount(){
-        let cart = JSON.parse(localStorage.getItem("cart"));
-        if(cart){
-            this.setState({
-                cart,
-                recentItems: this.getRecentItems(cart) 
-        });
+        let cart;
+        if(JSON.parse(localStorage.getItem("cart"))){
+            cart = JSON.parse(localStorage.getItem("cart"));
         } else {
             cart = []
-        }
+        } 
+        this.setState({
+            cart,
+            recentItems: this.getRecentItems(cart) 
+        });
         this.props.setCart(cart);
     }
 
