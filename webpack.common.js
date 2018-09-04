@@ -5,9 +5,26 @@ const webpack = require("webpack");
 
 
 module.exports = {
-  entry: {
-      app: './src/index.js'
-  },
+  devtool: 'source-map',    
+  entry: [
+      './src/index.js'
+  ],
+  output: {
+      filename: 'app.bundle.js',
+      path: path.join(__dirname, 'public'),
+      publicPath: '/public/'
+  },  
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+        title: 'yawa.store'
+      }),
+      new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify('production')
+        }
+      })
+  ],
   module: {
     rules: [
       {
@@ -26,17 +43,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-        title: 'yawa.store',
-        template: "./public/index.html",
-        filename: "index.html"
-      })
-  ],
-  resolve: { extensions: ['*', '.js', '.jsx'] },  
-    output: {
-        filename: 'app.bundle.js',
-        path: path.resolve(__dirname, 'dist')
-    }
+  resolve: { extensions: ['*', '.js', '.jsx'] }
 };
