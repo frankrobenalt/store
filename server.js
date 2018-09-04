@@ -23,7 +23,6 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(`${__dirname}/build`));
 
 app.get('/api/getProducts', (req, res) => {
     const db = req.app.get('db');
