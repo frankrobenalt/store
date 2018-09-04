@@ -20,7 +20,6 @@ class NavCart extends Component {
         } else {
             cart = []
         } 
-        console.log(cart);
         this.setState({
             cart,
             recentItems: this.getRecentItems(cart) 

@@ -23,8 +23,8 @@
 .main-container {
     transition: 300ms transform;
     width: 100%;
-    max-width: 1425px;
-    /* margin: 40px auto; */
+    max-width: 1100px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
