@@ -25,14 +25,14 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Production'
+      title: 'Store'
     })
   ],
   resolve: { extensions: ['*', '.js', '.jsx'] },  
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/public/'    
+    publicPath: '/dist/'    
   },
   stats: {
       children: false
