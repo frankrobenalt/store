@@ -157,10 +157,14 @@ form button, .fake-button {
         /* grid-template-rows: .1fr auto; */
         grid-template-columns: none; 
     }
+    .main-container {
+        margin: 140px auto 40px;
+    }
     .nav-container {
         z-index: 10;    
         /* top: 2.5vh; */
-        position: sticky;
+        position: fixed;
+        top: 0;
         background: rgb(255, 255, 255);
         height: fit-content;
         width: 100%;
@@ -197,7 +201,7 @@ form button, .fake-button {
 }
 @media (max-width: 600px){
     .main-container {
-        margin: 0 auto 40px;
+        margin: 80px auto 40px;
     }
     .pp-price {
         margin: 10px 0;
