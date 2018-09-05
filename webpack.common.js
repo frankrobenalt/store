@@ -11,8 +11,7 @@ module.exports = {
   ],
   output: {
       filename: 'app.bundle.js',
-      path: path.join(__dirname, 'dist'),
-      publicPath: '/public/'
+      path: path.join(__dirname, 'dist')
   },  
   plugins: [
     new CleanWebpackPlugin(['dist']),
