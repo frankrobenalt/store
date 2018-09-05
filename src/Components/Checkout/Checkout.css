@@ -196,11 +196,17 @@ form button, .fake-button {
     }
 }
 @media (max-width: 600px){
+    .main-container {
+        margin: 0 auto 40px;
+    }
+    .pp-price {
+        margin: 10px 0;
+    }
     .nav {
         width: 95%;
     }
     .logo-img {
-        width: 75px;
+        width: 55px;
         margin-bottom: -20px;
         margin-left: 10px;
     }
@@ -212,6 +218,9 @@ form button, .fake-button {
         font-size: 15px;
         border-bottom: 2px solid transparent;
         margin: 5px;
+    }
+    .menu-header:hover {
+        border-bottom: 2px solid transparent;
     }
     .product-grid {
         grid-template-columns: 1fr;
@@ -233,6 +242,7 @@ form button, .fake-button {
     }
     .pp-title {
         margin: 10px 0;
+        text-align: center;
     }
     .cart-container {
         display: flex;

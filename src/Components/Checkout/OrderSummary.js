@@ -78,12 +78,6 @@ class OrderSummary extends React.Component {
                     <div>
                         Subtotal: ${ subtotal }
                     </div>
-                    <div>
-                        Tax: ${ taxes }
-                    </div>
-                    <div>
-                        Shipping: ${ shipping }
-                    </div>
                     { subtotal <= 100 &&
                         <div className="alert-box flex-column align-center">
                             <div>*free shipping on orders over $100</div>
@@ -92,6 +86,12 @@ class OrderSummary extends React.Component {
                             </Link>
                         </div>
                     }
+                    <div>
+                        Tax: ${ taxes }
+                    </div>
+                    <div>
+                        Shipping: ${ shipping }
+                    </div>
                     <div className="line"></div>
                     <div className="order-total">
                         Total: ${ subtotal + taxes + shipping }
