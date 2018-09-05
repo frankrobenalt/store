@@ -67,6 +67,7 @@
 .image {
     position: relative;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 .image img {
