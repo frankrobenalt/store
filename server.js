@@ -30,13 +30,13 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'dist'), function(err) {
-      if (err) {
-        res.status(500).send(err)
-      }
-    })
-  })
+// app.get('/*', function(req, res) {
+//     res.sendFile(path.join(__dirname, 'dist'), function(err) {
+//       if (err) {
+//         res.status(500).send(err)
+//       }
+//     })
+//   })
 
 app.get('/api/getProducts', (req, res) => {
     const db = req.app.get('db');
