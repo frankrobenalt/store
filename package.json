@@ -1,7 +1,8 @@
 {
   "name": "storedoe",
   "private": true,
-  "proxy": "http://localhost:4040/api",
+  "proxy": "http://localhost:4040",
+  "main": "server.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack --config webpack.prod.js",
