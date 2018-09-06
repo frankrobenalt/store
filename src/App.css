@@ -1,6 +1,10 @@
 * {
     text-transform: lowercase;
 }
+#root {
+    max-width: 1600px;
+    margin: 0 auto;
+}
 .main-grid {
     display: grid;
     grid-template-columns: 1fr 3fr;
