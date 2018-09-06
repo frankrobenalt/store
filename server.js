@@ -56,6 +56,7 @@ app.post('/api/similarProducts', (req, res) => {
 })
 
 app.post('/api/payment', (req, res) => {
+    console.log('here');
     let meta = {};
     req.body.info.cart.map(cur => {
         meta[`${cur.cart_id}`] = cur.product.product_name + ' ' + cur.line + ' ' + cur.size
