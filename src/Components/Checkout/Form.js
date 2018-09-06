@@ -70,12 +70,13 @@ class CheckoutForm extends React.Component {
           token,
           info: this.state
         }).then(response => {
+            console.log(response);
             if (response.data === 'success'){
               this.props.setStatus(true, null, this.state);
             } else {
               this.props.setStatus(null, true);  
             }
-      })
+      }).catch(err => console.log(err));
     });
 
     // However, this line of code will do the same thing:
