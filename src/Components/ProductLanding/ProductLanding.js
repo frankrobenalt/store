@@ -191,4 +191,4 @@ class ProductLanding extends Component{
     }
 }
 
-export default withRouter(connect(state=>state, { addToCart })(ProductLanding));
+export default withRouter(connect(null, { addToCart })(ProductLanding));
