@@ -66,7 +66,7 @@ class CheckoutForm extends React.Component {
     // tokenize, since there's only one in this group.
     this.props.stripe.createToken({name: `${this.state.firstName} ${this.state.lastName}`}).then(({token}) => {
       console.log('Received Stripe token:', token);
-      axios.post('http://www.yawa.store/api/payment', {
+      axios.post('/api/payment', {
           token,
           info: this.state
         }).then(response => {
