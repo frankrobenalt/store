@@ -18,9 +18,15 @@ class NavCartItem extends Component {
             <div className="nav-cart-remove" onClick={ ()=> this.removeItem(this.props.item.cart_id) }>x</div>
             <img src={ this.props.item.pic } alt={ this.props.item.product.product_name } />
             <div className="text-box">
-            <div>
-            { this.props.item.product.product_name } ({ this.props.item.line })
-            </div>
+            { Array.isArray(this.props.item.product) ?
+                <div>
+                    Coaster Set
+                </div>
+                :
+                <div>
+                { this.props.item.product.product_name } ({ this.props.item.line })
+                </div>
+            }
             { this.props.item.line != 'coaster' &&
             <div>{ this.props.item.size }</div>
             }

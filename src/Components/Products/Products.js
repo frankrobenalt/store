@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import ProductCard from '../ProductCard/ProductCard';
+import CoasterPack from './CoasterPack';
 import data from '../../../data/product.json';
 
 export default class Products extends Component{
@@ -54,6 +55,9 @@ export default class Products extends Component{
         })
         return (
             <div className="main-container">
+                { this.props.match.params.theme === 'coaster' &&
+                    <CoasterPack />
+                }
                 <div className="section-header">{ theme }s</div>
                 <div className="product-grid">
                     { products }

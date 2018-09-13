@@ -56,9 +56,15 @@ class CartLanding extends Component {
                     <div className="remove" onClick={ ()=> this.removeItem(item.cart_id) }>remove</div>
                     <img src={ item.pic } alt="" />
                     <div className="cart-text-wrapper">
+                    { Array.isArray(item.product) ?
+                        <div>
+                            Coaster Set
+                        </div>
+                        :
                         <div>
                             { item.product.product_name }
                         </div>
+                    }
                         { item.line === 'coaster' ?
                         <div>
                             { item.line } 
@@ -93,7 +99,7 @@ class CartLanding extends Component {
                             *excluding tax & shipping
                         </div>
                         <Link to={'/checkout'}>
-                            <div className="checkout-btn">
+                            <div className="btn">
                                 checkout
                             </div>
                         </Link>
