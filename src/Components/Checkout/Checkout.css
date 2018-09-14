@@ -152,7 +152,7 @@ form button, .fake-button {
         font-size: .75em;
     }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .main-grid {
         /* grid-template-rows: .1fr auto; */
         grid-template-columns: none; 
@@ -299,5 +299,9 @@ form button, .fake-button {
     }
     .main-grid {
         grid-gap: 10px;
+    }
+    .coaster-pack-container {
+        top: 10vh;
+        max-width: 90vw;
     }
 }

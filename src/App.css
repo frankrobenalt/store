@@ -66,13 +66,13 @@
 .coaster-pack-container {
     max-width: 95vw;
     position: sticky;
-    top: 2.5vh;
+    top: 0vh;
     background: white;
     z-index: 10;
     padding: 10px;
     box-shadow: 0px 0px 5px lightgrey;
-    width: 90%;
-    margin: 20px auto;
+    width: 100%;
+    margin: 20px auto 0;
     border-radius: 10px;
 }
 

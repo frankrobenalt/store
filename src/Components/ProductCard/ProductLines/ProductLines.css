@@ -20,12 +20,14 @@
 .landing-row > .prod-container {
     width: 20%;
     opacity: 0.8;
+    border-radius: 10px;
 }
 
 .prod-line-row img {
     width: 100%;
     margin: 0;
     padding: 5px;
+    border-radius: 10px;
 }
 
 .prod-line-row div {
@@ -38,9 +40,11 @@
     position: relative;
     margin: 0 5px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .prod-container-overlay {
+    border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
