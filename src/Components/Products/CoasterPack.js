@@ -18,7 +18,7 @@ class CoasterPack extends Component{
     componentDidMount(){
         window.scrollTo(0,0);
     }
-
+    
     addToPack(item){
         if(this.state.total === 8) { 
             this.setState({
@@ -47,6 +47,13 @@ class CoasterPack extends Component{
             pack: newPack,
             total: newTotal
         })
+        this.packScrollLeft();
+    }
+
+    packScrollLeft(){
+        setTimeout(() => {
+            document.querySelector(".coaster-pack-grid").scrollLeft += 1000;
+        }, 300);
     }
     
     removeFromPack(item){
@@ -124,8 +131,8 @@ class CoasterPack extends Component{
         return (
             <div>
                 <div className="section-header">Build your own coaster pack</div>
-                <div>Pick 8 below for the price of 5(save $15)</div>
-                <div>or scroll to the bottom and add individually</div>
+                <div className="margin text-center">Pick 8 below for the price of 5(save $15)</div>
+                <div className="margin text-center">or scroll to the bottom and add individually</div>
                 <div className="coaster-pack-container">
                     <div className="pp-title">Your Pack ({ this.state.total }/8)</div>
                     <div className="coaster-pack-grid">

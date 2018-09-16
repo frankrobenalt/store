@@ -9,8 +9,11 @@
 }
 
 .product-page-grid img {
-    /* width: 75%; */
     margin: auto;
+}
+
+.product-page-grid-img {
+    width: 75%;
 }
 
 .product-info {

@@ -59,7 +59,7 @@
     overflow-y: hidden;
 }
 
-::-webkit-scrollbar { 
+.coaster-pack-grid::-webkit-scrollbar { 
     display: none; 
 }
 
@@ -144,6 +144,8 @@
 
 .image img {
     width: 100%;
+    transition: 300ms width;
+    margin: 0 auto;
 }
 
 .overlay {
@@ -171,6 +173,7 @@
 .image:hover .overlay {
     opacity: 1;
 }
+
 
 .info-wrapper {
     display: flex;
@@ -214,4 +217,12 @@
     background: white;
     border-radius: 50%;
     box-shadow: 0px 0px 3px lightgray;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mobile-nav {
+    display: none;
 }

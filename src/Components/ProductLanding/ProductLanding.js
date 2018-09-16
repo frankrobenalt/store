@@ -159,7 +159,7 @@ class ProductLanding extends Component{
         return (
             <div className="main-container">
                 <div className="product-page-grid">
-                    <img src={ this.state.productPic } alt={ product.product_name } />
+                    <img className="product-page-grid-img" src={ this.state.productPic } alt={ product.product_name } />
                     <div className="product-info">
                         <div className="pp-title product-info-div">{ product.product_name }</div>
                         <div className="product-info-div">products:</div>
