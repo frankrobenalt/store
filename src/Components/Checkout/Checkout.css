@@ -316,6 +316,22 @@ form button, .fake-button {
         top: 100px;
         max-width: 90vw;
     }
+    .tiny-product-wrapper {
+        height: 85px;
+        padding: 5px;
+    }
+    .coaster-pack-grid {
+        height: 110px;
+        padding: 5px;
+        margin: 10px 0;
+    }
+    .nav-cart-remove {
+        top: 2px;
+        right: 2px;
+    }
+    .quantity {
+        padding: 5px 10px 3px;
+    }
     .prod-container-overlay:hover {
         opacity: 0;
     }

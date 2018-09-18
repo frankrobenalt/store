@@ -31,6 +31,7 @@
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
+    position: relative;
 }
 
 .product-grid {
@@ -68,12 +69,11 @@
     position: sticky;
     top: 0vh;
     background: white;
-    z-index: 10;
+    z-index: 9;
     padding: 10px;
-    box-shadow: 0px 0px 5px lightgrey;
+    box-shadow: 0px 0px 2px lightgrey;
     width: 100%;
     margin: 20px auto 0;
-    border-radius: 10px;
 }
 
 .section-header {
