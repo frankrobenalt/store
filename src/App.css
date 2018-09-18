@@ -227,3 +227,7 @@
 .mobile-nav {
     display: none;
 }
+
+.coaster-rel-container {
+    position: relative;
+}

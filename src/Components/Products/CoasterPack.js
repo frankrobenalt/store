@@ -129,7 +129,7 @@ class CoasterPack extends Component{
             )
         })
         return (
-            <div>
+            <div className="coaster-rel-container">
                 <div className="section-header">Build your own coaster pack</div>
                 <div className="margin text-center">Pick 8 below for the price of 5(save $15)</div>
                 <div className="margin text-center">or scroll to the bottom and add individually</div>
