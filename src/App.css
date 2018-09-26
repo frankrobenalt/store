@@ -47,6 +47,19 @@
     border-radius: 10px;
 }
 
+.coaster-product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: 0px 0px 10px lightgray inset;
+    background-color: #fafafa;
+    border-radius: 10px;
+    text-align: center;
+}
+
 .coaster-pack-grid {
     display: flex;
     width: 100%;
@@ -230,4 +243,9 @@
 
 .coaster-rel-container {
     position: relative;
+}
+
+.red {
+    color: rgb(252, 104, 104);
+    margin-bottom: 10px;
 }

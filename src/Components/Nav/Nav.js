@@ -5,7 +5,7 @@ import NavCart from './NavCart';
 
 function windowClickToggleMenu(e){
     let menu = document.querySelector(".products-sub-menu");
-    if(e.target.classList.contains('products-menu')){ return }
+    if(e.target.classList.contains('products-menu') || e.target.innerText === 'coasters' || e.target.innerText === 'tees' || e.target.innerText === 'hoodies'){ return }
     else { menu.style.display = 'none' } 
 }
 
@@ -82,6 +82,9 @@ export default class Nav extends Component {
                         </Link>
                     </div>
                 </div>
+                <Link to={'/cart'}>
+                    <div className="mobile-nav-header">cart</div>
+                </Link>
                 <Link to={'/checkout'}>
                     <div className="mobile-nav-header">checkout</div>
                 </Link>

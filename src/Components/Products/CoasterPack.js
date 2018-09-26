@@ -125,7 +125,7 @@ class CoasterPack extends Component{
                         <img src={cur.productLines[0].coaster} alt={cur.product_name} />
                     </div>
                     <div className="product-info">
-                    <div className="big product-info-div">
+                    <div className="product-info-div">
                         { cur.product_name }
                     </div>
                     </div>
@@ -166,7 +166,7 @@ class CoasterPack extends Component{
                     </div>
                     }
                 </div>
-                <div className="product-grid">
+                <div className="coaster-product-grid">
                     { coasters }
                 </div>
             </div>

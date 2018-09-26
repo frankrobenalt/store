@@ -19,7 +19,7 @@
 
 .landing-row > .prod-container {
     width: 20%;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     border-radius: 10px;
 }
 

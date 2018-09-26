@@ -21,8 +21,9 @@ class ProductLanding extends Component{
             similarProducts: [],
             line: '',
             price: 0,
-            size: 'small',
-            productPic: ''
+            size: '',
+            productPic: '',
+            noSize: false
         }
 
         this.handleProductChange = this.handleProductChange.bind(this);
@@ -33,7 +34,6 @@ class ProductLanding extends Component{
     componentDidMount(){
         window.scrollTo(0,0);        
         this.getProdInfo(this.props);
-        
     }
 
     componentWillReceiveProps(nextProps){
@@ -63,9 +63,27 @@ class ProductLanding extends Component{
                 product,
                 similarProducts,
                 line,
+                size: '',
                 price: newPrice,
                 productPic
             })
+        let sizes = document.querySelector('.size-box-container').childNodes;
+        sizes.forEach(cur => {
+            cur.classList.remove('selected-size');
+        })    
+        let domImg = document.querySelector('.product-page-grid').childNodes[0];
+        let domTextNodes = document.querySelector('.product-page-grid').childNodes[1].childNodes;
+        let delay = 50;
+        domTextNodes.forEach(node => {
+            node.style.transitionDelay = delay + 'ms';
+            delay += 50;
+        })
+        setTimeout(() => {
+            domImg.classList.remove('before-anim');
+            domTextNodes.forEach(node => {
+                node.classList.remove('before-anim');
+            })
+        }, 100);
     }
 
     getNewPic(product, line){
@@ -92,12 +110,24 @@ class ProductLanding extends Component{
             price: newPrice,
             productPic
         })
+        let domTextNodes = document.querySelector('.product-page-grid').childNodes[1].childNodes;
+        setTimeout(() => {
+            domTextNodes.forEach(node => {
+                node.classList.remove('before-anim');
+            })
+        }, 10);
     }
 
     updateSize(event){
         this.setState({
-            size: event.target.value
+            size: event.target.id,
+            noSize: false
         })
+        let sizes = document.querySelector('.size-box-container').childNodes;
+        sizes.forEach(cur => {
+            cur.classList.remove('selected-size');
+        })
+        document.getElementById(event.target.id).classList.add('selected-size');
     }
 
     updateQuantity(event){
@@ -107,6 +137,9 @@ class ProductLanding extends Component{
     }
 
     addToCart(state){
+        if(!state.size){ 
+            return this.setState({ noSize: true });
+        }
         let pic;
         state.product.productLines.map(cur => {
             if(cur[state.line]){
@@ -159,26 +192,28 @@ class ProductLanding extends Component{
         return (
             <div className="main-container">
                 <div className="product-page-grid">
-                    <img className="product-page-grid-img" src={ this.state.productPic } alt={ product.product_name } />
+                    <img className="product-page-grid-img before-anim" src={ this.state.productPic } alt={ product.product_name } />
                     <div className="product-info">
-                        <div className="pp-title product-info-div">{ product.product_name }</div>
-                        <div className="product-info-div big-text">{ this.state.line }</div>
+                        <div className="pp-title product-info-div before-anim">{ product.product_name } - { this.state.line }</div>
+                        { this.state.noSize && 
+                            <div className="red">*please choose a size</div>
+                        }
                         { this.state.line !== 'coaster' &&
-                        <div className="flex product-info-div align-center">
+                        <div className="flex product-info-div align-center before-anim">
                         <div>Size</div>
-                        <select name="size" id="size" onChange={ this.updateSize }>
-                            <option value="small">small</option>
-                            <option value="medium">medium</option>
-                            <option value="large">large</option>
-                            <option value="XL">XL</option>
-                        </select>
+                        <div className="size-box-container">
+                            <div onClick={ this.updateSize } id="small">s</div>
+                            <div onClick={ this.updateSize } id="medium">m</div>
+                            <div onClick={ this.updateSize } id="large">l</div>
+                            <div onClick={ this.updateSize } id="xl">xl</div>
+                        </div>
                         </div>
                         }
-                        <div className="pp-price product-info-div">$
+                        <div className="pp-price product-info-div before-anim">$
                             { this.state.price }
                         </div>
-                        <div className="add-to-cart" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
-                        <div className="product-info-div">products:</div>
+                        <div className="add-to-cart before-anim" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
+                        <div className="product-info-div before-anim">products:</div>
                         <ProductLines lines={ product.productLines } landing={true} id={ product.id } line={this.state.line} changeProd={this.handleProductChange} />
                     </div>
                 </div>

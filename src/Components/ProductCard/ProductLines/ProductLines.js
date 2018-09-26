@@ -8,17 +8,37 @@ export default class ProductLines extends Component {
         this.changeProd = this.changeProd.bind(this);
     }
 
+    componentDidMount(){
+        let prodLineRow = document.querySelector('.prod-line-row').childNodes;
+        let delay = 350;
+        prodLineRow.forEach(node => {
+            node.style.transitionDelay = delay + 'ms';
+            delay += 50;
+        })
+        setTimeout(() => {
+            prodLineRow.forEach(node => {
+                node.classList.remove('before-anim');
+            })
+        }, 100);
+    }
+    
     changeProd(line){
         this.props.changeProd(line);
-        let lineRow = document.querySelectorAll('.landing-row')[0].querySelectorAll('.prod-container');
-        lineRow.forEach(cur => {
+        let prodLineRow = document.querySelector('.prod-line-row').childNodes;
+        prodLineRow.forEach(cur => {
+            cur.style.transitionDelay = '0ms';
             cur.classList.remove('selected');
         })
-        lineRow.forEach(cur => {
+        prodLineRow.forEach(cur => {
             if(cur.id === line){
                 cur.classList.add('selected')
             }
         })
+        setTimeout(() => {
+            prodLineRow.forEach(cur => {
+                cur.classList.remove('before-anim');
+            })
+        }, 10);
     }
 
     render(){
@@ -29,8 +49,8 @@ export default class ProductLines extends Component {
                 lines[line] = cur[line]
             }
         })
-        let unselected = "prod-container";
-        let selected = "prod-container selected";
+        let unselected = "prod-container before-anim";
+        let selected = "prod-container selected before-anim";
         return (
             <div>
                 {

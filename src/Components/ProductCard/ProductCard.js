@@ -10,7 +10,8 @@ class ProductCard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            normal: false
+            normal: false,
+            noSize: false
         }
         this.handleProductChange = this.handleProductChange.bind(this);
         this.updateQuantity = this.updateQuantity.bind(this);
@@ -43,6 +44,9 @@ class ProductCard extends Component {
     }
 
     addToCart(state, featured_line){
+        if(!state.size){ 
+            return this.setState({ noSize: true });
+        }
         let pic, line, size;
         if(this.props.filter){ line = this.props.filter };
         if(featured_line){ line = featured_line }
@@ -52,7 +56,6 @@ class ProductCard extends Component {
             }
         })
         if(state.size){ size = state.size }
-        if(!state.size){ size = 'small' }
         let newCart
         if (JSON.parse(localStorage.getItem("cart"))){
             newCart = JSON.parse(localStorage.getItem("cart"));
@@ -77,6 +80,15 @@ class ProductCard extends Component {
         localStorage.setItem("cart_id", JSON.stringify(id));
         localStorage.setItem("cart", JSON.stringify(newCart));
         this.props.addToCart(newProduct);
+        this.setState({
+            size: ''
+        })
+         let sizes = document.querySelectorAll('.size-box-container');
+         sizes.forEach(cur => {
+             cur.childNodes.forEach(size => {
+                 size.classList.remove('selected-size')
+             })
+         })
     }
 
     handleProductChange(event){
@@ -102,7 +114,13 @@ class ProductCard extends Component {
 
     updateSize(event){
         this.setState({
-            size: event.target.value
+            size: event.target.id,
+            noSize: false
+        })
+        let sizes = event.target.parentNode.childNodes;
+        sizes.forEach(cur => {
+            if(cur.id === event.target.id){ cur.classList.add('selected-size') }
+            else { cur.classList.remove('selected-size') }
         })
     }
 
@@ -136,15 +154,18 @@ class ProductCard extends Component {
                         <div className="product-info">
                         <div className="big product-info-div">{ prod.product_name }</div>
                         <div className="product-info-div big-text">{ prod.featured_key }</div>
+                        { this.state.noSize && 
+                            <div className="red">*please choose a size</div>
+                        }
                         { prod.featured_key !== 'coaster' &&
                         <div className="flex product-info-div align-center">
                         <div>Size</div>
-                        <select name="size" id="size" onChange={ this.updateSize }>
-                            <option value="small">small</option>
-                            <option value="medium">medium</option>
-                            <option value="large">large</option>
-                            <option value="XL">XL</option>
-                        </select>
+                        <div className="size-box-container">
+                            <div onClick={ this.updateSize } id="small">s</div>
+                            <div onClick={ this.updateSize } id="medium">m</div>
+                            <div onClick={ this.updateSize } id="large">l</div>
+                            <div onClick={ this.updateSize } id="xl">xl</div>
+                        </div>
                         </div>
                         }
                         <div className="pp-price product-info-div">
