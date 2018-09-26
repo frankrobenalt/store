@@ -44,9 +44,11 @@ class CoasterPack extends Component{
         }
         let newTotal = this.state.total += 1;
         if(newTotal === 1){
+            if (window.innerWidth < 600){
             let coasterContainer = document.querySelector(".coaster-pack-container");
             coasterContainer.style.position = 'fixed';
             coasterContainer.style.top = '80px';
+            }
         }
         this.setState({
             pack: newPack,
@@ -76,8 +78,10 @@ class CoasterPack extends Component{
         });
         let newTotal = this.state.total -= 1;
         if(newTotal === 0){
-            let coasterContainer = document.querySelector(".coaster-pack-container");
-            coasterContainer.style.position = 'initial';
+            if (window.innerWidth < 600){
+                let coasterContainer = document.querySelector(".coaster-pack-container");
+                coasterContainer.style.position = 'initial';
+            }
         }
         this.setState({
             pack: newPack,

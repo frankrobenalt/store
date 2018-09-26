@@ -198,6 +198,9 @@ form button, .fake-button {
     .checkout {
         top: 15vh;
     }
+    .coaster-pack-container {
+        top: 130px;
+    }
 }
 @media (max-width: 800px){
     .mobile-nav {
@@ -216,7 +219,10 @@ form button, .fake-button {
         margin: 100px auto 40px;
     }
     .pp-price {
-        margin: 10px 0;
+        margin: 5px 0;
+    }
+    .product-info-div {
+        margin: 3px 0;
     }
     .nav {
         width: 95%;
@@ -251,14 +257,20 @@ form button, .fake-button {
         grid-template-rows: .75fr 1fr;
         grid-template-columns: none !important;
         margin: 20px auto !important;
-        width: 90%;
-    }
-    .product-page-grid img {
         width: 100%;
     }
+    .prod-line-row {
+        margin: 5px 0;
+    }
+    .product-page-grid-img {
+        width: 70%;
+    }
     .pp-title {
-        margin: 10px 0;
+        margin: 5px 0;
         text-align: center;
+    }
+    .product-info select {
+        padding: 5px;
     }
     .cart-container {
         display: flex;

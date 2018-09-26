@@ -60,6 +60,7 @@
     align-self: center;
     width: max-content;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .product-info input {

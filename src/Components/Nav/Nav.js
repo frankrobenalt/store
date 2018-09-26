@@ -20,9 +20,11 @@ export default class Nav extends Component {
         if (menu.style.display === "initial"){
             menu.style.display = 'none';
             window.removeEventListener("click", windowClickToggleMenu)
+            window.removeEventListener("touchend", windowClickToggleMenu)
         } else {
             menu.style.display = 'initial';
             window.addEventListener("click", windowClickToggleMenu)
+            window.addEventListener("touchend", windowClickToggleMenu)
         };
     }
 

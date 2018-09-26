@@ -37,8 +37,8 @@
        "theme": "sports",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/0d91b2ad-9f05-43c8-854a-f61c2ec5be4b_jrsmith.png",
        "featured": true,
-       "featured_idx": 1,
-       "featured_key": "tee"
+       "featured_idx": 2,
+       "featured_key": "hoodie"
     },
     {
        "id": 3,
@@ -199,7 +199,7 @@
     },
     {
         "id": 12,
-        "product_name": "yeezy muggin'",
+        "product_name": "yeezy not cheesin'",
         "productLines": [ 
             {
                 "coaster": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/dc731b27-2807-4fc2-b141-9870286bf76b_yeezy-mug-coaster.png"
