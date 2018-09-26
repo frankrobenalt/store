@@ -75,10 +75,10 @@
     text-align: center;
     padding: 15px 5px;
     width: 100%;
-    max-width: 200px;
+    max-width: 150px;
     background-color: #6B2DE8;
     color: white;
-    font-size: 1.5em;
+    font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
 }

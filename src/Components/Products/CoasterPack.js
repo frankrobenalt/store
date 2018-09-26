@@ -45,9 +45,10 @@ class CoasterPack extends Component{
         let newTotal = this.state.total += 1;
         if(newTotal === 1){
             if (window.innerWidth < 600){
-            let coasterContainer = document.querySelector(".coaster-pack-container");
-            coasterContainer.style.position = 'fixed';
-            coasterContainer.style.top = '80px';
+                let coasterContainer = document.querySelector(".coaster-pack-container");
+                coasterContainer.style.position = 'fixed';
+                coasterContainer.style.top = '80px';
+                document.querySelector(".coaster-product-grid").style.paddingTop = '25px';
             }
         }
         this.setState({
@@ -81,6 +82,7 @@ class CoasterPack extends Component{
             if (window.innerWidth < 600){
                 let coasterContainer = document.querySelector(".coaster-pack-container");
                 coasterContainer.style.position = 'initial';
+                document.querySelector(".coaster-product-grid").style.paddingTop = '10px';
             }
         }
         this.setState({
@@ -156,13 +158,9 @@ class CoasterPack extends Component{
                             *you've reached 8 coasters. click add to cart and make another!
                         </div>
                     }
-                    { this.state.total === 8 ?
+                    { this.state.total === 8 &&
                     <div className="center">
                         <div className="btn" onClick={()=>this.addToCart(this.state.pack)}>add to cart</div>
-                    </div>
-                    :
-                    <div className="center">
-                        <div className="fake-button invalid">add to cart</div>
                     </div>
                     }
                 </div>

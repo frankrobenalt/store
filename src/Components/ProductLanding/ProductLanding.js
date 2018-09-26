@@ -212,7 +212,7 @@ class ProductLanding extends Component{
                         <div className="pp-price product-info-div before-anim">$
                             { this.state.price }
                         </div>
-                        <div className="add-to-cart before-anim" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
+                        <div className="btn before-anim" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
                         <div className="product-info-div before-anim">products:</div>
                         <ProductLines lines={ product.productLines } landing={true} id={ product.id } line={this.state.line} changeProd={this.handleProductChange} />
                     </div>

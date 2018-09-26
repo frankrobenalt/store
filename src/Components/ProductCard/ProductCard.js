@@ -173,7 +173,7 @@ class ProductCard extends Component {
                             { prod.featured_key === 'tee' && <span>25</span> }
                             { prod.featured_key === 'hoodie' && <span>45</span> }
                         </div>
-                        <div className="add-to-cart" onClick={ () => this.addToCart(this.state, prod.featured_key) }>Add To Cart</div>
+                        <div className="btn" onClick={ () => this.addToCart(this.state, prod.featured_key) }>Add To Cart</div>
                     </div>
                     </div>
                     }
@@ -230,7 +230,7 @@ class ProductCard extends Component {
                             { this.props.filter === 'tee' && <span>25</span> }
                             { this.props.filter === 'hoodie' && <span>45</span> }
                         </div>
-                        <div className="add-to-cart" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
+                        <div className="btn" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
                     </div>
                 </div>
                 }

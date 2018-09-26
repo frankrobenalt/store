@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Nav.css';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import NavCart from './NavCart';
 
 function windowClickToggleMenu(e){
@@ -9,7 +11,7 @@ function windowClickToggleMenu(e){
     else { menu.style.display = 'none' } 
 }
 
-export default class Nav extends Component {
+class Nav extends Component {
     constructor(){
         super();
 
@@ -83,7 +85,11 @@ export default class Nav extends Component {
                     </div>
                 </div>
                 <Link to={'/cart'}>
-                    <div className="mobile-nav-header">cart</div>
+                    <div className="mobile-nav-header">cart
+                        { this.props.cart.length > 0 &&
+                            <b>{ this.props.cart.length }</b>
+                        }
+                    </div>
                 </Link>
                 <Link to={'/checkout'}>
                     <div className="mobile-nav-header">checkout</div>
@@ -94,3 +100,4 @@ export default class Nav extends Component {
     }
 }
 
+export default withRouter(connect(state=>state, null)(Nav));

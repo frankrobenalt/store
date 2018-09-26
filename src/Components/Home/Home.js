@@ -19,6 +19,23 @@ export default class Home extends Component{
         this.setState({
             products: data
         })
+        // let delay = 0;
+        // let ducts = document.querySelectorAll('.product-grid');
+        // setTimeout(() => {
+        //     ducts.forEach(duct => {
+        //         duct.childNodes.forEach(cur => {
+        //             cur.style.transitionDelay = delay + 'ms';
+        //             delay += 200;
+        //         })
+        //     })
+        // }, 50);
+        // setTimeout(() => {
+        //     ducts.forEach(duct => {
+        //         duct.childNodes.forEach(cur => {
+        //             cur.classList.remove('b4-home-anim');
+        //         })
+        //     })
+        // }, 100);
     }
 
   render(){
