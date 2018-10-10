@@ -10,10 +10,10 @@ export default class ProductLines extends Component {
 
     componentDidMount(){
         let prodLineRow = document.querySelector('.prod-line-row').childNodes;
-        let delay = 350;
+        let delay = 600;
         prodLineRow.forEach(node => {
             node.style.transitionDelay = delay + 'ms';
-            delay += 50;
+            delay += 100;
         })
         setTimeout(() => {
             prodLineRow.forEach(node => {

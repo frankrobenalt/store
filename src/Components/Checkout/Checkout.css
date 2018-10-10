@@ -357,4 +357,10 @@ form button, .fake-button {
     .btn {
         margin-bottom: 5px;
     }
+    .image {
+        height: auto;
+    }
+    .image img {
+        max-height: none;
+    }
 }

@@ -32,12 +32,11 @@ class ProductLanding extends Component{
     }
 
     componentDidMount(){
-        window.scrollTo(0,0);        
         this.getProdInfo(this.props);
     }
-
+    
     componentWillReceiveProps(nextProps){
-            this.getProdInfo(nextProps)
+        this.getProdInfo(nextProps)
     }
 
     getProdInfo(props){
@@ -73,17 +72,25 @@ class ProductLanding extends Component{
         })    
         let domImg = document.querySelector('.product-page-grid').childNodes[0];
         let domTextNodes = document.querySelector('.product-page-grid').childNodes[1].childNodes;
-        let delay = 50;
+        let delay = 100;
         domTextNodes.forEach(node => {
             node.style.transitionDelay = delay + 'ms';
-            delay += 50;
+            delay += 100;
         })
         setTimeout(() => {
             domImg.classList.remove('before-anim');
             domTextNodes.forEach(node => {
                 node.classList.remove('before-anim');
             })
+            if(this.props.location.query.size){
+                this.updateSize({
+                    target: {
+                        id: this.props.location.query.size
+                    }
+                })
+            }
         }, 100);
+
     }
 
     getNewPic(product, line){
@@ -168,6 +175,10 @@ class ProductLanding extends Component{
         this.props.addToCart(newProduct);
     }
 
+    editCartItem(item){
+
+    }
+
     render(){
         const product = this.state.product;
         let productPic;
@@ -198,29 +209,39 @@ class ProductLanding extends Component{
                         { this.state.noSize && 
                             <div className="red">*please choose a size</div>
                         }
-                        { this.state.line !== 'coaster' &&
-                        <div className="flex product-info-div align-center before-anim">
-                        <div>Size</div>
-                        <div className="size-box-container">
-                            <div onClick={ this.updateSize } id="small">s</div>
-                            <div onClick={ this.updateSize } id="medium">m</div>
-                            <div onClick={ this.updateSize } id="large">l</div>
-                            <div onClick={ this.updateSize } id="xl">xl</div>
+                        <div className="size-container before-anim">
+                            { this.state.line !== 'coaster' &&
+                            <div className="flex product-info-div align-center">
+                            <div>Size</div>
+                            <div className="size-box-container">
+                                <div onClick={ this.updateSize } id="small">s</div>
+                                <div onClick={ this.updateSize } id="medium">m</div>
+                                <div onClick={ this.updateSize } id="large">l</div>
+                                <div onClick={ this.updateSize } id="xl">xl</div>
+                            </div>
+                            </div>
+                            }
                         </div>
-                        </div>
-                        }
                         <div className="pp-price product-info-div before-anim">$
                             { this.state.price }
                         </div>
+                        { this.props.location.query ?
+                        <div className="btn before-anim" onClick={ () => this.editCartItem(this.state) }>Update Item</div>
+                        :
                         <div className="btn before-anim" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
+                        }
                         <div className="product-info-div before-anim">products:</div>
                         <ProductLines lines={ product.productLines } landing={true} id={ product.id } line={this.state.line} changeProd={this.handleProductChange} />
                     </div>
                 </div>
+                { !this.props.location.query &&
+                <div>
                 <div className="pp-title">Similar Products</div>
                 <div className="product-grid">
                     { similarProductsHtml }
                 </div>
+                </div>
+                }
             </div>
         )
     }

@@ -137,11 +137,11 @@ class ProductCard extends Component {
             filter_pic = prod.productLines.filter(cur => cur[this.props.filter] != undefined)[0][this.props.filter];
         }
         return (
-            <div className="product-wrapper">
+            <div>
                 { this.props.full &&
                 <div>
                     { this.props.featured &&
-                    <div>
+                    <div className="product-wrapper">
                         <div className="image">
                             <Link to={`/product/${prod.id}/${prod.featured_key}`}>
                             <div className="overlay">
@@ -178,7 +178,7 @@ class ProductCard extends Component {
                     </div>
                     }
                     { this.state.normal &&
-                        <div>
+                        <div className="product-wrapper">
                         <div className="image">
                             <Link to={`/product/${prod.id}`}>
                             <div className="overlay">
@@ -201,7 +201,7 @@ class ProductCard extends Component {
                 </div>
                 }
                 { this.props.filter &&
-                <div>
+                <div className="product-wrapper">
                     <div className="image">
                         <Link to={`/product/${prod.id}/${this.props.filter}`}>
                         <div className="overlay">
@@ -214,17 +214,19 @@ class ProductCard extends Component {
                     <div className="product-info">
                         <div className="big product-info-div">{ prod.product_name }</div>
                         <div className="product-info-div big-text">{ this.props.filter }</div>
+                        <div className="size-container">
                         { this.props.filter !== 'coaster' &&
-                        <div className="flex product-info-div align-center">
+                        <div className="flex align-center">
                         <div>Size</div>
-                        <select name="size" id="size" onChange={ this.updateSize }>
-                            <option value="small">small</option>
-                            <option value="medium">medium</option>
-                            <option value="large">large</option>
-                            <option value="XL">XL</option>
-                        </select>
+                        <div className="size-box-container">
+                            <div onClick={ this.updateSize } id="small">s</div>
+                            <div onClick={ this.updateSize } id="medium">m</div>
+                            <div onClick={ this.updateSize } id="large">l</div>
+                            <div onClick={ this.updateSize } id="xl">xl</div>
+                        </div>
                         </div>
                         }
+                        </div>
                         <div className="pp-price product-info-div">
                             ${ this.props.filter === 'coaster' && <span>5</span> }
                             { this.props.filter === 'tee' && <span>25</span> }
