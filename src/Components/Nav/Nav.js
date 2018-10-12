@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Nav.css';
 import { withRouter, Link } from 'react-router-dom';
+import { setCart } from '../../ducks/reducer';
 import { connect } from 'react-redux';
 
 import NavCart from './NavCart';
@@ -14,7 +15,30 @@ function windowClickToggleMenu(e){
 class Nav extends Component {
     constructor(){
         super();
+        this.state = {
+            cart: []
+        }
+    }
 
+    componentDidMount(){
+        let cart;
+        if(JSON.parse(localStorage.getItem("cart"))){
+            cart = JSON.parse(localStorage.getItem("cart"));
+        } else {
+            cart = []
+        } 
+        this.setState({
+            cart
+        });
+        this.props.setCart(cart);
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps !== this.props){
+            this.setState({
+                cart: nextProps.cart
+            })
+        }
     }
 
     toggleMobileNav(){
@@ -98,4 +122,4 @@ class Nav extends Component {
     }
 }
 
-export default withRouter(connect(state=>state, null)(Nav));
+export default withRouter(connect(state=>state, { setCart })(Nav));

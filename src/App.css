@@ -82,7 +82,7 @@
 .coaster-pack-container {
     max-width: 95vw;
     position: sticky;
-    top: 0vh;
+    top: 150px;
     background: white;
     z-index: 9;
     padding: 10px;
