@@ -23,12 +23,15 @@ class ProductLanding extends Component{
             price: 0,
             size: '',
             productPic: '',
-            noSize: false
+            noSize: false,
+            gender: 'mens'
         }
 
         this.handleProductChange = this.handleProductChange.bind(this);
         this.updateSize = this.updateSize.bind(this);
         this.updateQuantity = this.updateQuantity.bind(this);
+        this.changeGender.bind(this);
+        this.changeColor.bind(this);
     }
 
     componentDidMount(){
@@ -51,7 +54,14 @@ class ProductLanding extends Component{
             if(product.productLines[product.productLines.length - 1]['tee']) line = 'tee';
             if(product.productLines[product.productLines.length - 1]['hoodie']) line = 'hoodie';
         }
-        let productPic = this.getNewPic(product, line);
+        let color, productPic;
+        if(product.featured_color){
+            productPic = product.featured_pic;
+            color = product.featured_color;
+        } else {
+            color = 'grey'
+            productPic = this.getNewPic(product, line);
+        }
         let newPrice;
         if (line === 'coaster') newPrice = 5
         else if (line === 'tee') newPrice = 25
@@ -64,32 +74,15 @@ class ProductLanding extends Component{
                 line,
                 size: '',
                 price: newPrice,
-                productPic
+                productPic,
+                color
             })
-        let sizes = document.querySelector('.size-box-container').childNodes;
-        sizes.forEach(cur => {
-            cur.classList.remove('selected-size');
-        })    
-        let domImg = document.querySelector('.product-page-grid').childNodes[0];
-        let domTextNodes = document.querySelector('.product-page-grid').childNodes[1].childNodes;
-        let delay = 100;
-        domTextNodes.forEach(node => {
-            node.style.transitionDelay = delay + 'ms';
-            delay += 100;
-        })
-        setTimeout(() => {
-            domImg.classList.remove('before-anim');
-            domTextNodes.forEach(node => {
-                node.classList.remove('before-anim');
-            })
-            if(this.props.location.query.size){
-                this.updateSize({
-                    target: {
-                        id: this.props.location.query.size
-                    }
-                })
-            }
-        }, 100);
+        if(document.querySelector('.size-box-container')){
+            let sizes = document.querySelector('.size-box-container').childNodes;
+            sizes.forEach(cur => {
+                cur.classList.remove('selected-size');
+            })    
+        }
 
     }
 
@@ -111,11 +104,16 @@ class ProductLanding extends Component{
         } else if (event === 'hoodie') {
             newPrice = 45
             productPic = this.getNewPic(product, 'hoodie');
+        } else if (event === 'womenshoodie') {
+            event = 'hoodie';
+            newPrice = 45
+            productPic = this.getNewPic(product, 'womenshoodie')
         }
         this.setState({
             line: event,
             price: newPrice,
-            productPic
+            productPic,
+            color: 'grey'
         })
         let domTextNodes = document.querySelector('.product-page-grid').childNodes[1].childNodes;
         setTimeout(() => {
@@ -144,7 +142,7 @@ class ProductLanding extends Component{
     }
 
     addToCart(state){
-        if(!state.size){ 
+        if(!state.size && state.line !== 'coaster'){ 
             return this.setState({ noSize: true });
         }
         let pic;
@@ -166,6 +164,7 @@ class ProductLanding extends Component{
             line: state.line,
             price: state.price,
             size: state.size,
+            color: state.color,
             cart_id: id
         }
         newCart.push(newProduct);
@@ -179,11 +178,23 @@ class ProductLanding extends Component{
 
     }
 
+    changeGender(gender){
+        this.setState({ gender })
+    }
+
+    changeColor(color){
+        let newPic = color + this.state.line;
+        this.setState({
+            color,
+            productPic: this.state.product.colorPics[newPic]
+        })
+    }
+
     render(){
         const product = this.state.product;
         let productPic;
 
-        const similarProductsHtml = this.state.similarProducts.map(product => {
+        const similarProductsHtml = data.map(product => {
             return (
                 <ProductCard prod={product} full={true} key={product.id} />
             )
@@ -200,43 +211,73 @@ class ProductLanding extends Component{
                 <option value={ cur } key={ num }>{ cur }</option>
             )
         })
+        let colors;
+        if(this.state.line && this.state.line !== 'coaster' && this.state.product.colors){
+            colors = this.state.product.colors[this.state.line].map(color => {
+                return (
+                    <div className="color" style={{ background: color }} onClick={ ()=> this.changeColor(color) }></div>
+            )
+            });
+        }
         return (
             <div className="main-container">
                 <div className="product-page-grid">
-                    <img className="product-page-grid-img before-anim" src={ this.state.productPic } alt={ product.product_name } />
-                    <div className="product-info">
-                        <div className="pp-title product-info-div before-anim">{ product.product_name } - { this.state.line }</div>
-                        { this.state.noSize && 
-                            <div className="red">*please choose a size</div>
-                        }
-                        <div className="size-container before-anim">
+                    <div className="grid-row">
+                        <img className="product-page-grid-img" src={ this.state.productPic } alt={ product.product_name } />
+                        <div className="product-info">
+                            <div className="pp-info-title product-info-div">{ product.product_name } - { this.state.line }</div>
+                            { this.state.noSize && 
+                                <div className="red">*please choose a size</div>
+                            }
                             { this.state.line !== 'coaster' &&
-                            <div className="flex product-info-div align-center">
-                            <div>Size</div>
-                            <div className="size-box-container">
-                                <div onClick={ this.updateSize } id="small">s</div>
-                                <div onClick={ this.updateSize } id="medium">m</div>
-                                <div onClick={ this.updateSize } id="large">l</div>
-                                <div onClick={ this.updateSize } id="xl">xl</div>
-                            </div>
+                            <div>
+                                <div className="product-info-div big-text">colors</div>
+                                <div className="colors-container">
+                                    { colors }
+                                </div>
                             </div>
                             }
+                                { this.state.line !== 'coaster' &&
+                                <div className="flex product-info-div align-center">
+                                <div>Size</div>
+                                <div className="size-box-container">
+                                    <div onClick={ this.updateSize } id="small">s</div>
+                                    <div onClick={ this.updateSize } id="medium">m</div>
+                                    <div onClick={ this.updateSize } id="large">l</div>
+                                    <div onClick={ this.updateSize } id="xl">xl</div>
+                                    <div onClick={ this.updateSize } id="2xl">2xl</div>
+                                </div>
+                                </div>
+                                }
+                            <div className="pp-price product-info-div">$
+                                { this.state.price }
+                            </div>
+                            { this.props.location.query ?
+                            <div className="btn" onClick={ () => this.editCartItem(this.state) }>Update Item</div>
+                            :
+                            <div className="btn" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
+                            }
                         </div>
-                        <div className="pp-price product-info-div before-anim">$
-                            { this.state.price }
-                        </div>
-                        { this.props.location.query ?
-                        <div className="btn before-anim" onClick={ () => this.editCartItem(this.state) }>Update Item</div>
-                        :
-                        <div className="btn before-anim" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
+                    </div>
+                    <div>
+                        <div className="product-info-div pp-info-title">products:</div>
+                        { this.state.gender === 'mens' ?
+                            <div className="gender-wrapper">
+                                <div className="selected-gender" onClick={()=>this.changeGender('mens')}>mens</div>
+                                <div onClick={()=>this.changeGender('womens')}>womens</div>
+                            </div>
+                            :
+                            <div className="gender-wrapper">
+                                <div onClick={()=>this.changeGender('mens')}>mens</div>
+                                <div className="selected-gender" onClick={()=>this.changeGender('womens')}>womens</div>
+                            </div>
                         }
-                        <div className="product-info-div before-anim">products:</div>
-                        <ProductLines lines={ product.productLines } landing={true} id={ product.id } line={this.state.line} changeProd={this.handleProductChange} />
+                        <ProductLines lines={ product.productLines } gender={ this.state.gender } landing={true} id={ product.id } line={this.state.line} changeProd={this.handleProductChange} />
                     </div>
                 </div>
                 { !this.props.location.query &&
                 <div>
-                <div className="pp-title">Similar Products</div>
+                <div className="pp-title">products</div>
                 <div className="product-grid">
                     { similarProductsHtml }
                 </div>

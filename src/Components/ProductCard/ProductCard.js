@@ -11,21 +11,30 @@ class ProductCard extends Component {
         super(props);
         this.state = {
             normal: false,
-            noSize: false
+            noSize: false,
+            gender: 'mens'
         }
         this.handleProductChange = this.handleProductChange.bind(this);
         this.updateQuantity = this.updateQuantity.bind(this);
         this.updateSize = this.updateSize.bind(this);
         this.addToCart.bind(this);
+        this.changeGender.bind(this);
+        this.changeColor.bind(this);
     }
 
     componentDidMount(){
         this.setState({
             product: this.props.prod
         })
+        if(this.props.featured){
+            this.setState({
+                pic: this.props.prod.featured_pic
+            })
+        }
         if(!this.props.featured && !this.props.filter){
             this.setState({
-                normal: true
+                normal: true,
+                pic: this.props.prod.pic
             })
         }
     }
@@ -35,6 +44,11 @@ class ProductCard extends Component {
             this.setState({
                 product: nextProps.prod
             })
+            if(nextProps.featured){
+                this.setState({
+                    pic: nextProps.prod.featured_pic
+                })
+            }
             if(!nextProps.featured && !nextProps.filter){
                 this.setState({
                     normal: true
@@ -47,14 +61,9 @@ class ProductCard extends Component {
         if(!state.size){ 
             return this.setState({ noSize: true });
         }
-        let pic, line, size;
+        let line, size;
         if(this.props.filter){ line = this.props.filter };
         if(featured_line){ line = featured_line }
-        state.product.productLines.map(cur => {
-            if(cur[line]){
-                pic = cur[line];
-            }
-        })
         if(state.size){ size = state.size }
         let newCart
         if (JSON.parse(localStorage.getItem("cart"))){
@@ -69,11 +78,12 @@ class ProductCard extends Component {
         if(line === 'hoodie'){ price = 45 }
         const newProduct = {
             product: state.product,
-            pic,
+            pic: state.pic,
             line,
             price,
             size,
-            cart_id: id
+            cart_id: id,
+            gender: state.gender
         }
         newCart.push(newProduct);
         id++;
@@ -130,12 +140,33 @@ class ProductCard extends Component {
         })
     }
 
+    changeGender(gender){
+        this.setState({ 
+            gender
+        })
+    }
+
+    changeColor(color){
+        let newPic = color + this.props.prod.featured_key;
+        this.setState({
+            pic: this.props.prod.colorPics[newPic]
+        })
+    }
+
     render(){
         const prod = this.props.prod;
-        let filter_pic;
+        let filter_pic, colors;
         if(this.props.filter){
             filter_pic = prod.productLines.filter(cur => cur[this.props.filter] != undefined)[0][this.props.filter];
         }
+        if(prod.colors){
+            colors = prod.colors[prod.featured_key].map(color => {
+                return (
+                    <div className="color" style={{ background: color }} onClick={ ()=> this.changeColor(color) }></div>
+            )
+            });
+        }   
+
         return (
             <div>
                 { this.props.full &&
@@ -149,11 +180,30 @@ class ProductCard extends Component {
                                 <div>see more</div>
                             </div>
                             </Link>
-                            <img src={ prod.productLines[prod.featured_idx][prod.featured_key] } alt={ prod.product_name } />
+                            <img src={ this.state.pic } alt={ prod.product_name } />
                         </div>
-                        <div className="product-info">
+                        <div className="product-card-info">
                         <div className="big product-info-div">{ prod.product_name }</div>
                         <div className="product-info-div big-text">{ prod.featured_key }</div>
+                        { this.state.gender === 'mens' ?
+                            <div className="gender-wrapper">
+                                <div className="selected-gender" onClick={()=>this.changeGender('mens')}>mens</div>
+                                <div onClick={()=>this.changeGender('womens')}>womens</div>
+                            </div>
+                            :
+                            <div className="gender-wrapper">
+                                <div onClick={()=>this.changeGender('mens')}>mens</div>
+                                <div className="selected-gender" onClick={()=>this.changeGender('womens')}>womens</div>
+                            </div>
+                        }
+                        { prod.featured_key !== 'coaster' &&
+                        <div>
+                            <div className="product-info-div big-text">colors</div>
+                            <div className="colors-container">
+                                { colors }
+                            </div>
+                        </div>
+                        }
                         { this.state.noSize && 
                             <div className="red">*please choose a size</div>
                         }
@@ -165,6 +215,7 @@ class ProductCard extends Component {
                             <div onClick={ this.updateSize } id="medium">m</div>
                             <div onClick={ this.updateSize } id="large">l</div>
                             <div onClick={ this.updateSize } id="xl">xl</div>
+                            <div onClick={ this.updateSize } id="2xl">2xl</div>
                         </div>
                         </div>
                         }
@@ -190,8 +241,6 @@ class ProductCard extends Component {
                         </div>
                         <div className="info-wrapper">
                             <div className="big">{ prod.product_name }</div>
-                            <div>products:</div> 
-                            <ProductLines lines={ prod.productLines } id={ prod.id } />
                             <Link to={`/product/${prod.id}`}>
                             <div className="link">see more</div>
                             </Link>
@@ -211,7 +260,7 @@ class ProductCard extends Component {
                         </Link>
                         <img src={ filter_pic } alt={ prod.product_name } />
                     </div>
-                    <div className="product-info">
+                    <div className="product-card-info">
                         <div className="big product-info-div">{ prod.product_name }</div>
                         <div className="product-info-div big-text">{ this.props.filter }</div>
                         <div className="size-container">

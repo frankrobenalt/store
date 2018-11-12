@@ -58,11 +58,11 @@ export default class Home extends Component{
       });
     return(
         <div className="main-container">
-<div className="section-header">featured products</div>
+<div className="section-header">featured designs</div>
         <div className="product-grid">
             { featuredProducts }
         </div>
-<div className="section-header">all products</div>
+<div className="section-header">all designs</div>
         <div className="product-grid">
             { products }
         </div>

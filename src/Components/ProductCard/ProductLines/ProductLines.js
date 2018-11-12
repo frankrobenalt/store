@@ -9,24 +9,13 @@ export default class ProductLines extends Component {
     }
 
     componentDidMount(){
-        let prodLineRow = document.querySelector('.prod-line-row').childNodes;
-        let delay = 600;
-        prodLineRow.forEach(node => {
-            node.style.transitionDelay = delay + 'ms';
-            delay += 100;
-        })
-        setTimeout(() => {
-            prodLineRow.forEach(node => {
-                node.classList.remove('before-anim');
-            })
-        }, 100);
+     
     }
     
     changeProd(line){
         this.props.changeProd(line);
         let prodLineRow = document.querySelector('.prod-line-row').childNodes;
         prodLineRow.forEach(cur => {
-            cur.style.transitionDelay = '0ms';
             cur.classList.remove('selected');
         })
         prodLineRow.forEach(cur => {
@@ -34,11 +23,6 @@ export default class ProductLines extends Component {
                 cur.classList.add('selected')
             }
         })
-        setTimeout(() => {
-            prodLineRow.forEach(cur => {
-                cur.classList.remove('before-anim');
-            })
-        }, 10);
     }
 
     render(){
@@ -49,13 +33,15 @@ export default class ProductLines extends Component {
                 lines[line] = cur[line]
             }
         })
-        let unselected = "prod-container before-anim";
-        let selected = "prod-container selected before-anim";
+        let unselected = "prod-container";
+        let selected = "prod-container selected";
         return (
             <div>
                 {
                     this.props.landing ?
-                    <div className="prod-line-row landing-row">
+                    <div>
+                        { this.props.gender === 'mens' ?
+                        <div className="prod-line-row landing-row">
                         { lines.coaster &&
                             <div className={ this.props.line === 'coaster' ? selected : unselected } id="coaster" onClick={()=>this.changeProd('coaster')}>
                                 <img src={lines.coaster} alt="" />
@@ -73,6 +59,29 @@ export default class ProductLines extends Component {
                                 <img src={lines.hoodie} alt="" />
                                 <div className="prod-container-overlay"><b>Hoodie</b></div>
                             </div>
+                        }
+                        </div>
+                        :
+                        <div className="prod-line-row landing-row">
+                        { lines.coaster &&
+                            <div className={ this.props.line === 'coaster' ? selected : unselected } id="coaster" onClick={()=>this.changeProd('coaster')}>
+                                <img src={lines.coaster} alt="" />
+                                <div className="prod-container-overlay"><b>Coaster</b></div>
+                            </div>
+                        }
+                        {/* { lines.womenstee &&
+                            <div className={ this.props.line === 'tee' ? selected : unselected } id="womenstee" onClick={()=>this.changeProd('womenstee')}>
+                                <img src={lines.womenstee} alt="" />
+                                <div className="prod-container-overlay"><b>Tee</b></div>
+                            </div>
+                        }
+                        { lines.womenshoodie &&
+                            <div className={ this.props.line === 'hoodie' ? selected : unselected } id="womenshoodie" onClick={()=>this.changeProd('womenshoodie')}>
+                                <img src={lines.womenshoodie} alt="" />
+                                <div className="prod-container-overlay"><b>Hoodie</b></div>
+                            </div>
+                        } */}
+                        </div>
                         }
                     </div>
                     :
