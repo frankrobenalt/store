@@ -167,9 +167,11 @@ class ProductCard extends Component {
     }
 
     changeGender(gender){
+        let pic;
+        if(this.props.prod.featured_pic && this.props.prod.featured_gender === gender){ pic = this.props.prod.featured_pic } else { pic = this.state[gender].productLines.filter(line => line[this.state.line])[0][this.state.line] }
         this.setState({ 
             gender,
-            pic: this.state[gender].productLines.filter(line => line[this.state.line])[0][this.state.line],
+            pic,
             colors: this.state[gender].colors[this.state.line]
         })
     }
@@ -177,7 +179,6 @@ class ProductCard extends Component {
     changeColor(color){
         let currentLine = currentLine = this.state.line;
         let newPic = color + currentLine;
-        console.log(newPic)
         this.setState({
             pic: this.state[this.state.gender].colorPics[newPic]
         })
