@@ -63,7 +63,7 @@ app.post('/api/payment', (req, res) => {
         address_linetwo: req.body.info.addressLineTwo
     };
     req.body.info.cart.map(cur => {
-        meta[`${cur.cart_id}`] = cur.product.product_name + ' ' + cur.line + ' ' + cur.size
+        meta[`${cur.cart_id}`] = cur.product.product_name + ' ' + cur.color + ' ' + cur.line + ' ' + cur.gender + ' ' + cur.size
     });
     const db = req.app.get('db');
     stripe.charges.create({
