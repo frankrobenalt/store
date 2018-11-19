@@ -61,7 +61,6 @@ class CheckoutForm extends React.Component {
         loading: true,
         validForm: false
     });
-    console.log('info:', ev.target)
     // Within the context of `Elements`, this call to createToken knows which Element to
     // tokenize, since there's only one in this group.
     this.props.stripe.createToken({name: `${this.state.firstName} ${this.state.lastName}`}).then(({token}) => {

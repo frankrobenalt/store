@@ -79,7 +79,7 @@ class Checkout extends Component {
                 </div>
                 }
                 { this.state.checkingOut &&
-                <StripeProvider apiKey="pk_test_nsPpZ7uzc2I7VUKB8NuHrcmv">
+                <StripeProvider apiKey="pk_live_FIVTqDzKLd1i50yTNzRFhR1l">
                     <CheckoutForm setLoading={ this.setLoading } setStatus={ this.setStatus } />
                 </StripeProvider>
                 }
