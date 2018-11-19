@@ -23,6 +23,7 @@ class ProductLanding extends Component{
             price: 0,
             size: '',
             productPic: '',
+            productLines: [],
             noSize: false,
             gender: 'mens'
         }
@@ -46,36 +47,38 @@ class ProductLanding extends Component{
         window.scrollTo(0,0);
         const id = Number(props.match.params.productid);
         const product = data.filter(prod => prod.id == id)[0];
-        let line;
+        let line, gender;
+        if (props.match.params.gender === 'womens'){ gender = 'womens' } else { gender = 'mens' }
+        let productLines = product[gender].productLines
         if (props.match.params.productLine){
             line = props.match.params.productLine;
+        } else if (product.featured_key) {
+            line = product.featured_key;
         } else {
-            if(product.productLines[product.productLines.length - 1]['coaster']) line = 'coaster';
-            if(product.productLines[product.productLines.length - 1]['tee']) line = 'tee';
-            if(product.productLines[product.productLines.length - 1]['hoodie']) line = 'hoodie';
+            line = 'hoodie';
         }
         let color, productPic;
-        if(product.featured_color){
+        if(product.featured_color && gender === product.featured_gender && line === product.featured_key){
             productPic = product.featured_pic;
             color = product.featured_color;
+            line = product.featured_key
         } else {
-            color = 'grey'
-            productPic = this.getNewPic(product, line);
+            color = product[gender].colors[line][0]
+            productPic = this.getNewPic(product, line, gender);
         }
         let newPrice;
-        if (line === 'coaster') newPrice = 5
-        else if (line === 'tee') newPrice = 25
-        else if (line === 'hoodie') newPrice = 45
-        const theme = product.theme;
-        const similarProducts = data.filter(prod => prod.theme === theme && prod.id != id);  
+        if (line === 'coaster') newPrice = 6
+        else if (line === 'tee') newPrice = 30
+        else if (line === 'hoodie') newPrice = 50
             this.setState({
                 product,
-                similarProducts,
                 line,
                 size: '',
                 price: newPrice,
                 productPic,
-                color
+                productLines,
+                color,
+                gender
             })
         if(document.querySelector('.size-box-container')){
             let sizes = document.querySelector('.size-box-container').childNodes;
@@ -86,8 +89,9 @@ class ProductLanding extends Component{
 
     }
 
-    getNewPic(product, line){
-        let newPic = product.productLines.filter(cur => cur[line])[0];
+    getNewPic(product, line, gender){
+        if (!gender) { gender = this.state.gender }
+        let newPic = product[gender].productLines.filter(cur => cur[line])[0];
         return newPic[line];
     }
 
@@ -95,33 +99,30 @@ class ProductLanding extends Component{
         let newPrice;
         let productPic;
         let product = this.state.product;
+        let color;
         if (event === 'coaster') {
-            newPrice = 5
+            color = 'color'
+        } else {
+            color = this.state.product[this.state.gender].colors[event][0]
+        }
+        if (event === 'coaster') {
+            newPrice = 6;
             productPic = this.getNewPic(product, 'coaster');
+            color = 'coaster';
         } else if (event === 'tee') {
-            newPrice = 25
+            newPrice = 30
             productPic = this.getNewPic(product, 'tee');
         } else if (event === 'hoodie') {
-            newPrice = 45
+            newPrice = 50
             productPic = this.getNewPic(product, 'hoodie');
-        } else if (event === 'womenshoodie') {
-            event = 'hoodie';
-            newPrice = 45
-            productPic = this.getNewPic(product, 'womenshoodie')
-        }
+        } 
         this.setState({
             line: event,
             price: newPrice,
             productPic,
-            color: 'grey'
+            color
         })
-        let domTextNodes = document.querySelector('.product-page-grid').childNodes[1].childNodes;
-        setTimeout(() => {
-            domTextNodes.forEach(node => {
-                node.classList.remove('before-anim');
-            })
-        }, 10);
-    }
+      }
 
     updateSize(event){
         this.setState({
@@ -145,13 +146,7 @@ class ProductLanding extends Component{
         if(!state.size && state.line !== 'coaster'){ 
             return this.setState({ noSize: true });
         }
-        let pic;
-        state.product.productLines.map(cur => {
-            if(cur[state.line]){
-                pic = cur[state.line];
-            }
-        })
-        let newCart
+        let newCart;
         if (JSON.parse(localStorage.getItem("cart"))){
             newCart = JSON.parse(localStorage.getItem("cart"));
         } else {
@@ -160,12 +155,13 @@ class ProductLanding extends Component{
         let id = JSON.parse(localStorage.getItem("cart_id"));
         const newProduct = {
             product: state.product,
-            pic,
+            pic: state.productPic,
             line: state.line,
             price: state.price,
             size: state.size,
             color: state.color,
-            cart_id: id
+            cart_id: id,
+            gender: state.gender
         }
         newCart.push(newProduct);
         id++;
@@ -179,14 +175,18 @@ class ProductLanding extends Component{
     }
 
     changeGender(gender){
-        this.setState({ gender })
+        this.setState({ 
+            gender,
+            productLines: this.state.product[gender].productLines,
+            productPic: this.state.product[gender].productLines.filter(line => line[this.state.line])[0][this.state.line]
+        })
     }
 
     changeColor(color){
         let newPic = color + this.state.line;
         this.setState({
             color,
-            productPic: this.state.product.colorPics[newPic]
+            productPic: this.state.product[this.state.gender].colorPics[newPic]
         })
     }
 
@@ -199,23 +199,13 @@ class ProductLanding extends Component{
                 <ProductCard prod={product} full={true} key={product.id} />
             )
         })
-        const optionsArray = [];
-        this.state.product.productLines.map(cur => {
-            for (var line in cur){
-                optionsArray.push(line);
-            }
-        })
-        const options = optionsArray.map((cur, idx) => {
-            let num = idx;
-            return (
-                <option value={ cur } key={ num }>{ cur }</option>
-            )
-        })
         let colors;
-        if(this.state.line && this.state.line !== 'coaster' && this.state.product.colors){
-            colors = this.state.product.colors[this.state.line].map(color => {
+        if(this.state.line && this.state.line !== 'coaster'){
+            let border;
+            colors = this.state.product[this.state.gender].colors[this.state.line].map(color => {
+                color === 'white' ? border = '2px solid black' : border = 'none';
                 return (
-                    <div className="color" style={{ background: color }} onClick={ ()=> this.changeColor(color) }></div>
+                    <div className="color" style={{ background: color, border: border }} onClick={ ()=> this.changeColor(color) }></div>
             )
             });
         }
@@ -226,9 +216,6 @@ class ProductLanding extends Component{
                         <img className="product-page-grid-img" src={ this.state.productPic } alt={ product.product_name } />
                         <div className="product-info">
                             <div className="pp-info-title product-info-div">{ product.product_name } - { this.state.line }</div>
-                            { this.state.noSize && 
-                                <div className="red">*please choose a size</div>
-                            }
                             { this.state.line !== 'coaster' &&
                             <div>
                                 <div className="product-info-div big-text">colors</div>
@@ -237,7 +224,10 @@ class ProductLanding extends Component{
                                 </div>
                             </div>
                             }
-                                { this.state.line !== 'coaster' &&
+                            { this.state.noSize && 
+                                <div className="red">*please choose a size</div>
+                            }
+                            { this.state.line !== 'coaster' &&
                                 <div className="flex product-info-div align-center">
                                 <div>Size</div>
                                 <div className="size-box-container">
@@ -248,7 +238,7 @@ class ProductLanding extends Component{
                                     <div onClick={ this.updateSize } id="2xl">2xl</div>
                                 </div>
                                 </div>
-                                }
+                            }
                             <div className="pp-price product-info-div">$
                                 { this.state.price }
                             </div>
@@ -272,7 +262,7 @@ class ProductLanding extends Component{
                                 <div className="selected-gender" onClick={()=>this.changeGender('womens')}>womens</div>
                             </div>
                         }
-                        <ProductLines lines={ product.productLines } gender={ this.state.gender } landing={true} id={ product.id } line={this.state.line} changeProd={this.handleProductChange} />
+                        <ProductLines lines={ this.state.productLines } landing={true} id={ product.id } line={this.state.line} changeProd={this.handleProductChange} />
                     </div>
                 </div>
                 { !this.props.location.query &&

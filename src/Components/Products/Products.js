@@ -41,34 +41,11 @@ export default class Products extends Component{
     }
 
     render(){
-        let theme = '';
-        let productsFiltered = [];
-        if(this.props.match.params.theme){
-            theme = this.props.match.params.theme;
-            productsFiltered = [];
-            data.forEach(item => {
-                item.productLines.map(cur => {
-                    for (var key in cur){
-                        if(key === theme){
-                            productsFiltered.push(item);
-                        }
-                    }
-                })
-            }, this);
-        } else {
-            theme = 'Product';
-            productsFiltered = data;
-        }
-        const products = productsFiltered.map(product => {
-        if(this.props.match.params.theme){
+        let theme = this.props.match.params.theme;
+        const products = data.map(product => {
                 return (
                     <ProductCard prod={product} filter={theme} full={false} key={product.id} />
             )
-        } else {
-            return (
-                    <ProductCard prod={product} full={true} key={product.id} />
-            )
-        }
         })
         return (
             <div className="main-container">

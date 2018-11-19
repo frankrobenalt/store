@@ -39,9 +39,7 @@ export default class ProductLines extends Component {
             <div>
                 {
                     this.props.landing ?
-                    <div>
-                        { this.props.gender === 'mens' ?
-                        <div className="prod-line-row landing-row">
+                    <div className="prod-line-row landing-row">
                         { lines.coaster &&
                             <div className={ this.props.line === 'coaster' ? selected : unselected } id="coaster" onClick={()=>this.changeProd('coaster')}>
                                 <img src={lines.coaster} alt="" />
@@ -59,29 +57,6 @@ export default class ProductLines extends Component {
                                 <img src={lines.hoodie} alt="" />
                                 <div className="prod-container-overlay"><b>Hoodie</b></div>
                             </div>
-                        }
-                        </div>
-                        :
-                        <div className="prod-line-row landing-row">
-                        { lines.coaster &&
-                            <div className={ this.props.line === 'coaster' ? selected : unselected } id="coaster" onClick={()=>this.changeProd('coaster')}>
-                                <img src={lines.coaster} alt="" />
-                                <div className="prod-container-overlay"><b>Coaster</b></div>
-                            </div>
-                        }
-                        {/* { lines.womenstee &&
-                            <div className={ this.props.line === 'tee' ? selected : unselected } id="womenstee" onClick={()=>this.changeProd('womenstee')}>
-                                <img src={lines.womenstee} alt="" />
-                                <div className="prod-container-overlay"><b>Tee</b></div>
-                            </div>
-                        }
-                        { lines.womenshoodie &&
-                            <div className={ this.props.line === 'hoodie' ? selected : unselected } id="womenshoodie" onClick={()=>this.changeProd('womenshoodie')}>
-                                <img src={lines.womenshoodie} alt="" />
-                                <div className="prod-container-overlay"><b>Hoodie</b></div>
-                            </div>
-                        } */}
-                        </div>
                         }
                     </div>
                     :

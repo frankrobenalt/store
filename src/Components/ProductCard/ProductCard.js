@@ -12,7 +12,12 @@ class ProductCard extends Component {
         this.state = {
             normal: false,
             noSize: false,
-            gender: 'mens'
+            gender: '',
+            mens: {},
+            womens: {},
+            product: {},
+            colors: [],
+            line: ''
         }
         this.handleProductChange = this.handleProductChange.bind(this);
         this.updateQuantity = this.updateQuantity.bind(this);
@@ -28,30 +33,49 @@ class ProductCard extends Component {
         })
         if(this.props.featured){
             this.setState({
-                pic: this.props.prod.featured_pic
+                pic: this.props.prod.featured_pic,
+                gender: this.props.prod.featured_gender,
+                mens: this.props.prod.mens,
+                womens: this.props.prod.womens,
+                line: this.props.prod.featured_key,
+                colors: this.props.prod[this.props.prod.featured_gender].colors[this.props.prod.featured_key]
+            })
+        }
+        if(this.props.filter){
+            let colors;
+            if (this.props.filter === 'coaster'){ colors = [] }
+            else { colors = this.props.prod.mens.colors[this.props.filter] }
+            this.setState({
+                pic: this.props.prod.mens.productLines.filter(line => line[this.props.filter])[0][this.props.filter],
+                gender: 'mens',
+                mens: this.props.prod.mens,
+                womens: this.props.prod.womens,
+                line: this.props.filter,
+                colors
             })
         }
         if(!this.props.featured && !this.props.filter){
             this.setState({
                 normal: true,
-                pic: this.props.prod.pic
+                pic: this.props.prod.pic,
+                gender: 'mens'
             })
         }
     }
 
     componentWillReceiveProps(nextProps){
-        if(nextProps != this.props){
-            this.setState({
-                product: nextProps.prod
-            })
-            if(nextProps.featured){
+        if (this.props != nextProps){
+            if(nextProps.filter){
+                let colors;
+                if (nextProps.filter === 'coaster'){ colors = [] }
+                else { colors = nextProps.prod.mens.colors[nextProps.filter] }
                 this.setState({
-                    pic: nextProps.prod.featured_pic
-                })
-            }
-            if(!nextProps.featured && !nextProps.filter){
-                this.setState({
-                    normal: true
+                    pic: nextProps.prod.mens.productLines.filter(line => line[nextProps.filter])[0][nextProps.filter],
+                    colors,
+                    gender: 'mens',
+                    mens: nextProps.prod.mens,
+                    womens: nextProps.prod.womens,
+                    line: nextProps.filter,
                 })
             }
         }
@@ -59,7 +83,9 @@ class ProductCard extends Component {
 
     addToCart(state, featured_line){
         if(!state.size){ 
-            return this.setState({ noSize: true });
+            if(state.line !== 'coaster'){
+                return this.setState({ noSize: true });
+            }
         }
         let line, size;
         if(this.props.filter){ line = this.props.filter };
@@ -73,9 +99,9 @@ class ProductCard extends Component {
         }
         let id = JSON.parse(localStorage.getItem("cart_id"));
         let price;
-        if(line === 'coaster'){ price = 5 }
-        else if(line === 'tee'){ price = 25 }
-        if(line === 'hoodie'){ price = 45 }
+        if(line === 'coaster'){ price = 6 }
+        else if(line === 'tee'){ price = 30 }
+        if(line === 'hoodie'){ price = 50 }
         const newProduct = {
             product: state.product,
             pic: state.pic,
@@ -142,30 +168,33 @@ class ProductCard extends Component {
 
     changeGender(gender){
         this.setState({ 
-            gender
+            gender,
+            pic: this.state[gender].productLines.filter(line => line[this.state.line])[0][this.state.line],
+            colors: this.state[gender].colors[this.state.line]
         })
     }
 
     changeColor(color){
-        let newPic = color + this.props.prod.featured_key;
+        let currentLine = currentLine = this.state.line;
+        let newPic = color + currentLine;
+        console.log(newPic)
         this.setState({
-            pic: this.props.prod.colorPics[newPic]
+            pic: this.state[this.state.gender].colorPics[newPic]
         })
     }
 
     render(){
         const prod = this.props.prod;
-        let filter_pic, colors;
-        if(this.props.filter){
-            filter_pic = prod.productLines.filter(cur => cur[this.props.filter] != undefined)[0][this.props.filter];
-        }
-        if(prod.colors){
-            colors = prod.colors[prod.featured_key].map(color => {
-                return (
-                    <div className="color" style={{ background: color }} onClick={ ()=> this.changeColor(color) }></div>
+        let gender = this.state.gender;
+        let filter_pic;
+        let colors = this.state.colors.map(color => {
+            let border;
+            color === 'white' ? border = '3px solid black' : border = 'none';
+            return (
+                <div className="color" style={{ background: color, border: border }} onClick={ ()=> this.changeColor(color) }></div>
             )
-            });
-        }   
+        })
+        
 
         return (
             <div>
@@ -174,7 +203,7 @@ class ProductCard extends Component {
                     { this.props.featured &&
                     <div className="product-wrapper">
                         <div className="image">
-                            <Link to={`/product/${prod.id}/${prod.featured_key}`}>
+                            <Link to={`/product/${prod.id}/${prod.featured_key}/${this.state.gender}`}>
                             <div className="overlay">
                                 <div>{ prod.product_name }</div>
                                 <div>see more</div>
@@ -252,19 +281,43 @@ class ProductCard extends Component {
                 { this.props.filter &&
                 <div className="product-wrapper">
                     <div className="image">
-                        <Link to={`/product/${prod.id}/${this.props.filter}`}>
+                        <Link to={`/product/${prod.id}/${this.state.line}/${this.state.gender}`}>
                         <div className="overlay">
                             <div>{ prod.product_name }</div>
                             <div>see more</div>
                         </div>
                         </Link>
-                        <img src={ filter_pic } alt={ prod.product_name } />
+                        <img src={ this.state.pic } alt={ prod.product_name } />
                     </div>
                     <div className="product-card-info">
                         <div className="big product-info-div">{ prod.product_name }</div>
-                        <div className="product-info-div big-text">{ this.props.filter }</div>
-                        <div className="size-container">
-                        { this.props.filter !== 'coaster' &&
+                        <div className="product-info-div big-text">{ this.state.line }</div>
+                        { this.state.line !== 'coaster' &&
+                        <div style={{ 'width': '100%' }}>
+                        { this.state.gender === 'mens' ?
+                            <div className="gender-wrapper">
+                                <div className="selected-gender" onClick={()=>this.changeGender('mens')}>mens</div>
+                                <div onClick={()=>this.changeGender('womens')}>womens</div>
+                            </div>
+                            :
+                            <div className="gender-wrapper">
+                                <div onClick={()=>this.changeGender('mens')}>mens</div>
+                                <div className="selected-gender" onClick={()=>this.changeGender('womens')}>womens</div>
+                            </div>
+                        }
+                        <div>
+                            <div className="product-info-div big-text">colors</div>
+                            <div className="colors-container">
+                                { colors }
+                            </div>
+                        </div>
+                        </div>
+                        }
+                        { this.state.noSize && 
+                            <div className="red">*please choose a size</div>
+                        }
+                        <div className="flex product-info-div align-center">
+                        { this.state.line !== 'coaster' &&
                         <div className="flex align-center">
                         <div>Size</div>
                         <div className="size-box-container">
@@ -272,14 +325,15 @@ class ProductCard extends Component {
                             <div onClick={ this.updateSize } id="medium">m</div>
                             <div onClick={ this.updateSize } id="large">l</div>
                             <div onClick={ this.updateSize } id="xl">xl</div>
+                            <div onClick={ this.updateSize } id="2xl">2xl</div>
                         </div>
                         </div>
                         }
                         </div>
                         <div className="pp-price product-info-div">
-                            ${ this.props.filter === 'coaster' && <span>5</span> }
-                            { this.props.filter === 'tee' && <span>25</span> }
-                            { this.props.filter === 'hoodie' && <span>45</span> }
+                            ${ this.state.line === 'coaster' && <span>5</span> }
+                            { this.state.line === 'tee' && <span>25</span> }
+                            { this.state.line === 'hoodie' && <span>45</span> }
                         </div>
                         <div className="btn" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
                     </div>

@@ -81,7 +81,7 @@ class OrderSummary extends React.Component {
                     { subtotal <= 100 &&
                         <div className="alert-box flex-column align-center">
                             <div>*free shipping on orders over $100</div>
-                            <Link to={'/products'}>
+                            <Link to={'/'}>
                             continue shopping
                             </Link>
                         </div>

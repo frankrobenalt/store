@@ -246,6 +246,13 @@ form button, .fake-button {
     .image {
         height: 300px;
     }
+    .grid-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .landing-row > .prod-container {
+        width: 30%;
+    }
 }
 @media (max-width: 600px){
     #root {
@@ -258,7 +265,7 @@ form button, .fake-button {
         margin: 5px 0;
     }
     .product-info-div {
-        margin: 3px 0;
+        margin: 5px 0;
     }
     .nav {
         width: 95%;
@@ -303,11 +310,15 @@ form button, .fake-button {
         box-shadow: 0px 0px 0px;
     }
     .product-page-grid-img {
-        width: 70%;
+        width: 100%;
+        max-width: 100%;
     }
     .pp-title {
         margin: 5px 0 0;
         text-align: center;
+    }
+    .product-info {
+        width: 100%;
     }
     .product-info select {
         padding: 5px;

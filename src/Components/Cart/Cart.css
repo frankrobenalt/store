@@ -89,3 +89,11 @@
     width: 80%;
     margin: 10px auto;
 }
+
+.order-summary-wrapper > .cart-landing-item-wrapper img {
+    height: 100px;
+}
+
+.order-summary-wrapper > .cart-landing-item-wrapper > .cart-text-wrapper {
+    width: 70%;
+}

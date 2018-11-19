@@ -1,42 +1,262 @@
 [
     {
-       "id": 1,
-       "product_name": "Frank Reynolds",
-       "price": 5,
-       "quantity": 50,
-       "theme": "Film and TV",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/73d02411-c451-4b78-af59-08beae51fdc5_frank-reynolds-coaster.png"
-    },
-    {
-       "id": 2,
-       "product_name": "JR Smith",
-       "price": 5,
-       "quantity": 50,
-       "theme": "Sports",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/07830105-b0e5-4778-8b17-3adb51129b16_jrsmith-coaster.png"
-    },
+        "id": 2,
+        "product_name": "jr smith",
+        "price": 5,
+        "mens": {
+            "productLines": [
+                {
+                    "coaster": "https://s3.amazonaws.com/yawastore/coasters/jrsmith-coaster.jpg"
+                },
+                {
+                    "tee": "https://s3.amazonaws.com/yawastore/tees/jrsmith-dark-heather-tee.jpg"
+                },
+                {
+                    "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-hoodie.jpg"
+                }
+            ],
+            "colors": {
+                 "tee": ["grey", "black"],
+                 "hoodie": ["grey", "black"]
+            },
+            "colorPics": {
+                "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-hoodie.jpg",
+                "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-black-hoodie.jpg",
+                "greytee": "https://s3.amazonaws.com/yawastore/tees/jrsmith-dark-heather-tee.jpg",
+                "blacktee": ""
+            }
+           },
+           "womens": {
+            "productLines": [
+                {
+                    "coaster": "https://s3.amazonaws.com/yawastore/coasters/frank-reynolds-coaster.jpg"
+                },
+                {
+                    "tee": ""
+                },
+                {
+                    "hoodie": ""
+                }
+            ],
+            "colors": {
+                "tee": ["lightgray", "grey"],
+                "hoodie": ["white", "black"]
+            },
+            "colorPics": {
+                "lightgraytee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-womens-heather-tee.jpg",
+                "greytee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-womens-dark-grey-tee.jpg",
+                "whitehoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-womens-white-hoodie (2).jpg",
+                "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-womens-black-hoodie.jpg"
+            }
+           },
+        "quantity": 50,
+        "theme": "sports",
+        "pic": "https://s3.amazonaws.com/yawastore/general-artwork/jrsmith-withtext.jpg"
+     },
     {
        "id": 3,
-       "product_name": "Tupac",
+       "product_name": "tupac Red Wings",
        "price": 5,
+       "productLines": [
+        {
+            "coaster": "https://s3.amazonaws.com/yawastore/coasters/tupac-wings-coaster.jpg"
+        },
+        {
+            "tee": "https://s3.amazonaws.com/yawastore/tees/tupac-wings-dark-heather-tee.jpg"
+        },
+        {
+            "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-wings-hoodie.jpg"
+        }
+    ],              
        "quantity": 50,
-       "theme": "Music",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/62f98758-2d5f-4521-bf57-2b384e790328_tupac-coaster.png"
+       "theme": "music",
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/5a1e5fb6-4107-42c7-b28e-c1dd2287f0eb_tupac-bnw.png"
     },
     {
        "id": 4,
-       "product_name": "Three Finger Jack",
+       "product_name": "tupac U of M",
        "price": 5,
+       "productLines": [
+        {
+            "coaster": "https://s3.amazonaws.com/yawastore/coasters/tupac-um-coaster.jpg"
+        },
+        {
+            "tee": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-dark-heather-tee.jpg"
+        },
+        {
+            "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-grey-hoodie-bigpic.jpg"
+        }
+    ],    
+    "colors": {
+        "tee": ["grey", "black"],
+        "hoodie": ["grey", "navy"]
+   },   
+   "colorPics": {
+       "greytee": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-dark-heather-tee.jpg",
+       "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-grey-hoodie-bigpic.jpg",
+       "navyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-navy-hoodie.jpg"
+   },
        "quantity": 50,
-       "theme": "Nature",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/f896d3af-26db-416c-a8f1-a8d03a67dd47_threefingee-coaster.png"
+       "theme": "music",
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/5a9cd259-0b9c-4bf0-b096-e6f4d17bb64e_tupac-um.png",
+       "featured": true,
+       "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-navy-hoodie.jpg",
+       "featured_key": "hoodie",
+       "featured_color": "navyhoodie"
     },
     {
        "id": 5,
-       "product_name": "Welly the Westie",
+       "product_name": "fiji",
        "price": 5,
+       "productLines": [
+        {
+            "tee": "https://s3.amazonaws.com/yawastore/tees/fiji-dark-heather-tee.jpg"
+        },
+        {
+            "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/fiji-hoodie.jpg"
+        },
+        {
+            "coaster": "https://s3.amazonaws.com/yawastore/coasters/fiji-coaster.jpg"
+        }
+    ],          
        "quantity": 50,
-       "theme": "Animals",
-       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/8d90357f-dd6a-425e-ad39-3e3fab8556c0_wellys-head-color-coaster.png"
+       "theme": "nature",
+       "pic": "https://s3.amazonaws.com/yawastore/general-artwork/fiji---bnw.png"
+    },
+    {
+       "id": 6,
+       "product_name": "welly the westie",
+       "price": 5,
+       "productLines": [ 
+           {
+               "coaster": "https://s3.amazonaws.com/yawastore/coasters/welly-coaster.jpg"
+           }, 
+           { 
+               "tee": "https://s3.amazonaws.com/yawastore/tees/welly-dark-heather-tee.jpg"
+           },
+           {
+               "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-hoodie.jpg"
+           }
+        ], 
+        "colors": {
+            "tee": ["grey", "black", "darkolivegreen"],
+            "hoodie": ["grey", "navy", "black", "darkolivegreen", "royalblue"]
+       },      
+       "colorPics": {
+        "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-hoodie.jpg",
+        "navyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-navy-hoodie.jpg",
+        "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-black-hoodie.jpg",
+        "royalbluehoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-royal-blue-hoodie.jpg",
+        "darkolivegreenhoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-camo-hoodie.jpg",
+        "greytee": "https://s3.amazonaws.com/yawastore/tees/heather-ali.jpg"
+       },       
+       "quantity": 50,
+       "theme": "nature",
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/9f4533e0-74fa-47ef-8237-7e1a4ed1e66b_wellys-head.png",
+       "featured_key": "hoodie",
+       "featured_color": "royalbluehoodie",
+       "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/welly-royal-blue-hoodie.jpg"
+    },
+    {
+       "id": 7,
+       "product_name": "ali",
+       "price": 5,
+       "productLines": [ 
+           {
+               "coaster": "https://s3.amazonaws.com/yawastore/coasters/ali-coaster.jpg"
+           }, 
+           {
+            "tee": "https://s3.amazonaws.com/yawastore/tees/heather-ali.jpg"
+           },
+           {
+               "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/ali-grey-hoodie.jpg"
+           }
+        ], 
+        "colors": {
+            "tee": ["grey"],
+            "hoodie": ["grey", "navy", "darkolivegreen"]
+       },      
+       "colorPics": {
+        "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/ali-grey-hoodie.jpg",
+        "navyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/ali-navy-hoodie.jpg",
+        "darkolivegreenhoodie": "https://s3.amazonaws.com/yawastore/hoodies/ali-camo-hoodie.jpg",
+        "greytee": "https://s3.amazonaws.com/yawastore/tees/heather-ali.jpg"
+       },
+       "quantity": 50,
+       "theme": "sports",
+       "pic": "https://s3.amazonaws.com/yawastore/general-artwork/ali.jpg",
+       "featured": true,
+       "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/ali-camo-hoodie.jpg",
+       "featured_key": "hoodie",
+       "featured_color": "darkolivegreenhoodie"
+    },
+    {
+       "id": 8,
+       "product_name": "kendrick",
+       "price": 5,
+       "productLines": [ 
+           {
+               "coaster": "https://s3.amazonaws.com/yawastore/coasters/kendrick-coaster.jpg"
+           }, 
+           { 
+               "tee": "https://s3.amazonaws.com/yawastore/tees/kendrick-dark-heather-tee.jpg"
+           },
+           {
+               "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/kendrick-hoodie.jpg"
+           }
+        ],       
+       "quantity": 50,
+       "theme": "music",
+       "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/40228036-deb7-4ace-982e-53bdb30e9a3a_kenny.png"
+    },
+    {
+       "id": 9,
+       "product_name": "django",
+       "price": 5,
+       "productLines": [ 
+           {
+               "coaster": "https://s3.amazonaws.com/yawastore/coasters/django-coaster.jpg"
+           }, 
+           {
+               "tee": "https://s3.amazonaws.com/yawastore/tees/django-heather-dark-tee.jpg"
+           },
+           {
+               "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/django-hoodie.jpg"
+           }
+        ],  
+        "colors": {
+            "tee": ["grey", "black"],
+            "hoodie": ["grey", "navy"]
+       },   
+       "colorPics": {
+           "greytee": "https://s3.amazonaws.com/yawastore/tees/django-heather-dark-tee.jpg"
+       },
+       "quantity": 50,
+       "theme": "film and tv",
+       "pic": "https://s3.amazonaws.com/yawastore/general-artwork/django.png",
+       "featured": true,
+       "featured_pic": "https://s3.amazonaws.com/yawastore/tees/django-heather-dark-tee.jpg",
+       "featured_key": "tee",
+       "featured_color": "greytee"
+    },
+    {
+        "id": 10,
+        "product_name": "redwood",
+        "price": 5,
+        "productLines": [ 
+            {
+                "coaster": "https://s3.amazonaws.com/yawastore/coasters/redwood-coaster.jpg"
+            }, 
+            {
+                "tee": "https://s3.amazonaws.com/yawastore/tees/redwood-dark-heather-tee.jpg"
+            }
+            , 
+            {
+                "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/redwood-hoodie.jpg"
+            }
+        ],
+        "quantity": 50,
+        "theme": "nature",
+        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/18e96027-7e81-4f1d-beab-8c8187b9e374_redwood.png"
     }
 ]

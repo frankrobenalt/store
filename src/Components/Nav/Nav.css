@@ -55,8 +55,16 @@
     height: 150px;
 }
 
+.products-menu {
+    height: 100%;
+    padding-top: 100%;
+}
+
 .products-menu-container {
     position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .products-sub-menu::before {
@@ -75,10 +83,11 @@
     padding: 10px 5px;
     background-color: #2E2E2E;
     position: absolute;
-    top: 200%;
+    top: 75%;
     left: -25px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0px 0px 5px lightgray;
+    z-index: 99;
 }
 
 .mobile-nav-sub {
@@ -134,10 +143,21 @@
 .mobile-nav a {
     color: black;
     text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav-sub {
+    border-bottom: 2px solid transparent;
+}
+
+.products-sub-menu a:hover > .mobile-nav-sub {
+    border-bottom: 2px solid white;
 }
 
 .menu-header:hover {
-    border-bottom: 2px solid white;
 }
 
 .menu-header-option {

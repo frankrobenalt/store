@@ -13,7 +13,7 @@ export default (
 
         <Switch>
             <Route component={ Home } exact path="/" />
-            <Route component={ ProductLanding } exact path="/product/:productid/:productLine?" />
+            <Route component={ ProductLanding } exact path="/product/:productid/:productLine?/:gender?" />
             <Route component={ Products } exact path="/products/:theme?" />
             <Route component={ EditProduct } exact path="/editProduct/:cartid" />
             <Route component={ CartLanding } exact path="/cart" />

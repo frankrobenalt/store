@@ -50,6 +50,7 @@ class CartLanding extends Component {
     }
 
     render(){
+        console.log(items)
         const items = this.state.cart.map((item, idx) => {
             return (
                 <div className="cart-landing-item-wrapper" key={Math.floor(Math.random() * Math.floor(100000))}>
@@ -71,7 +72,7 @@ class CartLanding extends Component {
                         </div>
                             :
                         <div>
-                            { item.line } ({ item.size })
+                            { item.line } ({ item.gender } - { item.size })
                         </div>
                         }
                         <div>
