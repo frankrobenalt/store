@@ -168,7 +168,7 @@ class ProductCard extends Component {
 
     changeGender(gender){
         let pic;
-        if(this.props.prod.featured_pic && this.props.prod.featured_gender === gender){ pic = this.props.prod.featured_pic } else { pic = this.state[gender].productLines.filter(line => line[this.state.line])[0][this.state.line] }
+        if(this.props.prod.featured_pic && this.props.prod.featured_key === this.state.line && this.props.prod.featured_gender === gender){ pic = this.props.prod.featured_pic } else { pic = this.state[gender].productLines.filter(line => line[this.state.line])[0][this.state.line] }
         this.setState({ 
             gender,
             pic,

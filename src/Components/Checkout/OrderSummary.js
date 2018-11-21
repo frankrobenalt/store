@@ -58,7 +58,7 @@ class OrderSummary extends React.Component {
                         </div>
                             :
                         <div>
-                            { item.line } ({ item.size })
+                            { item.line } ({ item.gender } - { item.size })
                         </div>
                         }
                         <div>

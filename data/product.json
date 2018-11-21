@@ -9,21 +9,22 @@
                 "coaster": "https://s3.amazonaws.com/yawastore/coasters/frank-reynolds-coaster.jpg"
             },
             {
-                "tee": "https://s3.amazonaws.com/yawastore/tees/heather-dark-frank-reynolds-tee.png.jpg"
+                "tee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-white-heather-tee.jpg"
             },
             {
                 "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-hoodie.jpg"
             }
         ],
         "colors": {
-             "tee": ["grey", "black"],
+             "tee": ["lightgray", "grey", "black"],
              "hoodie": ["grey", "navy", "black"]
         },
         "colorPics": {
             "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-hoodie.jpg",
             "navyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-navy-hoodie.jpg",
             "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-black-hoodie.jpg",
-            "greytee": "https://s3.amazonaws.com/yawastore/tees/heather-dark-frank-reynolds-tee.png.jpg",
+            "lightgraytee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-white-heather-tee.jpg",
+            "greytee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-dark-heather-tee.jpg",
             "blacktee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-mens-black-tee.jpg"
         }
        },
@@ -202,7 +203,7 @@
         "womens": {
             "productLines": [
                 {
-                    "coaster": "https://s3.amazonaws.com/yawastore/coasters/tupac-wings-coaster.jpg"
+                    "coaster": "https://s3.amazonaws.com/yawastore/coasters/tupac-um-coaster.jpg"
                 },
                 {
                     "tee": "https://s3.amazonaws.com/yawastore/tees/tupac-um-womens-grey-tee.jpg"
