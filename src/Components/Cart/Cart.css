@@ -76,6 +76,7 @@
     padding: 15px 5px;
     width: 100%;
     max-width: 150px;
+    background: linear-gradient(to right,#4d03e2, #a40ced);
     background-color: #6B2DE8;
     color: white;
     font-size: 1em;

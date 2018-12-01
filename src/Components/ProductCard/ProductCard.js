@@ -207,7 +207,7 @@ class ProductCard extends Component {
                             <Link to={`/product/${prod.id}/${prod.featured_key}/${this.state.gender}`}>
                             <div className="overlay">
                                 <div>{ prod.product_name }</div>
-                                <div>see more</div>
+                                <div>explore products</div>
                             </div>
                             </Link>
                             <img src={ this.state.pic } alt={ prod.product_name } />
@@ -215,6 +215,11 @@ class ProductCard extends Component {
                         <div className="product-card-info">
                         <div className="big product-info-div">{ prod.product_name }</div>
                         <div className="product-info-div big-text">{ prod.featured_key }</div>
+                        <div className="pp-price product-info-div">
+                            ${ prod.featured_key === 'coaster' && <span>6</span> }
+                            { prod.featured_key === 'tee' && <span>25</span> }
+                            { prod.featured_key === 'hoodie' && <span>50</span> }
+                        </div>
                         { this.state.gender === 'mens' ?
                             <div className="gender-wrapper">
                                 <div className="selected-gender" onClick={()=>this.changeGender('mens')}>mens</div>
@@ -249,11 +254,6 @@ class ProductCard extends Component {
                         </div>
                         </div>
                         }
-                        <div className="pp-price product-info-div">
-                            ${ prod.featured_key === 'coaster' && <span>5</span> }
-                            { prod.featured_key === 'tee' && <span>25</span> }
-                            { prod.featured_key === 'hoodie' && <span>45</span> }
-                        </div>
                         <div className="btn" onClick={ () => this.addToCart(this.state, prod.featured_key) }>Add To Cart</div>
                     </div>
                     </div>
@@ -264,7 +264,7 @@ class ProductCard extends Component {
                             <Link to={`/product/${prod.id}`}>
                             <div className="overlay">
                                 <div>{ prod.product_name }</div>
-                                <div>see more</div>
+                                <div>explore products</div>
                             </div>
                             </Link>
                             <img src={ prod.pic } alt={ prod.product_name } />
@@ -272,7 +272,7 @@ class ProductCard extends Component {
                         <div className="info-wrapper">
                             <div className="big">{ prod.product_name }</div>
                             <Link to={`/product/${prod.id}`}>
-                            <div className="link">see more</div>
+                            <div className="link">explore products</div>
                             </Link>
                         </div>
                         </div>
@@ -285,7 +285,7 @@ class ProductCard extends Component {
                         <Link to={`/product/${prod.id}/${this.state.line}/${this.state.gender}`}>
                         <div className="overlay">
                             <div>{ prod.product_name }</div>
-                            <div>see more</div>
+                            <div>explore products</div>
                         </div>
                         </Link>
                         <img src={ this.state.pic } alt={ prod.product_name } />
@@ -293,6 +293,11 @@ class ProductCard extends Component {
                     <div className="product-card-info">
                         <div className="big product-info-div">{ prod.product_name }</div>
                         <div className="product-info-div big-text">{ this.state.line }</div>
+                        <div className="pp-price product-info-div">
+                            ${ this.state.line === 'coaster' && <span>5</span> }
+                            { this.state.line === 'tee' && <span>25</span> }
+                            { this.state.line === 'hoodie' && <span>50</span> }
+                        </div>
                         { this.state.line !== 'coaster' &&
                         <div style={{ 'width': '100%' }}>
                         { this.state.gender === 'mens' ?
@@ -330,11 +335,6 @@ class ProductCard extends Component {
                         </div>
                         </div>
                         }
-                        </div>
-                        <div className="pp-price product-info-div">
-                            ${ this.state.line === 'coaster' && <span>5</span> }
-                            { this.state.line === 'tee' && <span>25</span> }
-                            { this.state.line === 'hoodie' && <span>45</span> }
                         </div>
                         <div className="btn" onClick={ () => this.addToCart(this.state) }>Add To Cart</div>
                     </div>

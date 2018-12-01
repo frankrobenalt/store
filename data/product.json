@@ -17,11 +17,10 @@
         ],
         "colors": {
              "tee": ["lightgray", "grey", "black"],
-             "hoodie": ["grey", "navy", "black"]
+             "hoodie": ["grey", "black"]
         },
         "colorPics": {
             "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-hoodie.jpg",
-            "navyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-navy-hoodie.jpg",
             "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-black-hoodie.jpg",
             "lightgraytee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-white-heather-tee.jpg",
             "greytee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-dark-heather-tee.jpg",
@@ -47,13 +46,14 @@
         "colorPics": {
             "lightgraytee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-womens-heather-tee.jpg",
             "greytee": "https://s3.amazonaws.com/yawastore/tees/frank-reynolds-womens-dark-grey-tee.jpg",
-            "whitehoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-womens-white-hoodie (2).jpg",
+            "whitehoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-womens-white-hoodie-(2).jpg",
             "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-womens-black-hoodie.jpg"
         }
        },
        "quantity": 50,
        "theme": "film and tv",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/ee5b732a-d05e-483b-b461-643fa0965f5a_frank-reynolds.png",
+       "popular": true,
        "featured": true,
        "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/frank-reynolds-hoodie.jpg",
        "featured_gender": "mens",
@@ -62,7 +62,7 @@
     },
     {
         "id": 2,
-        "product_name": "jr smith",
+        "product_name": "jr swish",
         "price": 5,
         "mens": {
             "productLines": [
@@ -70,21 +70,22 @@
                     "coaster": "https://s3.amazonaws.com/yawastore/coasters/jrsmith-coaster.jpg"
                 },
                 {
-                    "tee": "https://s3.amazonaws.com/yawastore/tees/jrsmith-dark-heather-tee.jpg"
+                    "tee": "https://s3.amazonaws.com/yawastore/tees/jr-smith-white-heather-tee.jpg"
                 },
                 {
-                    "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-grey-hoodie-new.jpg"
+                    "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-grey-hoodie.jpg"
                 }
             ],
             "colors": {
-                 "tee": ["grey", "black", "darkolivegreen"],
+                 "tee": ["lightgray", "grey", "black", "darkolivegreen"],
                  "hoodie": ["grey", "black", "darkolivegreen"]
             },
             "colorPics": {
-                "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-grey-hoodie-new.jpg",
+                "lightgraytee": "https://s3.amazonaws.com/yawastore/tees/jr-smith-white-heather-tee.jpg",
+                "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-grey-hoodie.jpg",
                 "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-black-hoodie.jpg",
                 "darkolivegreenhoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-camo-hoodie.jpg",
-                "greytee": "https://s3.amazonaws.com/yawastore/tees/jrsmith-dark-heather-tee.jpg",
+                "greytee": "https://s3.amazonaws.com/yawastore/tees/jr-smith-dark-heather-tee.jpg",
                 "blacktee": "https://s3.amazonaws.com/yawastore/tees/jr-smith-mens-black-tee.jpg",
                 "darkolivegreentee": "https://s3.amazonaws.com/yawastore/tees/jr-smith-camo-tee.jpg"
             }
@@ -95,7 +96,7 @@
                     "coaster": "https://s3.amazonaws.com/yawastore/coasters/jrsmith-coaster.jpg"
                 },
                 {
-                    "tee": "https://s3.amazonaws.com/yawastore/tees/jr-smithwomens-grey-tee.jpg"
+                    "tee": "https://s3.amazonaws.com/yawastore/tees/jr-smith-womens-grey-tee.jpg"
                 },
                 {
                     "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-womens-white-hoodie.jpg"
@@ -106,7 +107,7 @@
                 "hoodie": ["white", "black"]
             },
             "colorPics": {
-                "lightgraytee": "https://s3.amazonaws.com/yawastore/tees/jr-smithwomens-grey-tee.jpg",
+                "lightgraytee": "https://s3.amazonaws.com/yawastore/tees/jr-smith-womens-grey-tee.jpg",
                 "greytee": "https://s3.amazonaws.com/yawastore/tees/jr-smith-womens-dark-grey-tee.jpg",
                 "whitehoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-womens-white-hoodie.jpg",
                 "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/jr-smith-unisex-black-hoodie.jpg"
@@ -126,17 +127,18 @@
                 "coaster": "https://s3.amazonaws.com/yawastore/coasters/tupac-wings-coaster.jpg"
             },
             {
-                "tee": "https://s3.amazonaws.com/yawastore/tees/tupac-wings-dark-heather-tee.jpg"
+                "tee": "https://s3.amazonaws.com/yawastore/tees/tupac-redwings-white-heather-tee.jpg"
             },
             {
                 "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-redwings-grey-hoodie.jpg"
             }
         ],   
         "colors": {
-             "tee": ["grey", "black", "darkolivegreen"],
+             "tee": ["lightgray", "grey", "black", "darkolivegreen"],
              "hoodie": ["grey", "black", "darkolivegreen"]
         },
         "colorPics": {
+            "lightgraytee": "https://s3.amazonaws.com/yawastore/tees/tupac-redwings-white-heather-tee.jpg",
             "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-redwings-grey-hoodie.jpg",
             "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-redwings-black-hoodie.jpg",
             "darkolivegreenhoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-redwings-camo-hoodie.jpg",
@@ -182,22 +184,24 @@
                     "coaster": "https://s3.amazonaws.com/yawastore/coasters/tupac-um-coaster.jpg"
                 },
                 {
-                    "tee": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-dark-heather-tee.jpg"
+                    "tee": "https://s3.amazonaws.com/yawastore/tees/tupac-um-white-heather-tee.jpg"
                 },
                 {
                     "hoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-grey-hoodie-bigpic.jpg"
                 }
             ],    
             "colors": {
-                "tee": ["grey", "black", "darkolivegreen"],
-                "hoodie": ["grey", "navy"]
+                "tee": ["lightgray", "grey", "black", "darkolivegreen"],
+                "hoodie": ["grey", "black", "darkolivegreen"]
            },   
            "colorPics": {
+               "lightgraytee": "https://s3.amazonaws.com/yawastore/tees/tupac-um-white-heather-tee.jpg",
                "greytee": "https://s3.amazonaws.com/yawastore/tees/tupac-um-dark-heather-tee.jpg",
                "blacktee": "https://s3.amazonaws.com/yawastore/tees/tupac-um-mens-black-tee.jpg",
                "darkolivegreentee": "https://s3.amazonaws.com/yawastore/tees/tupac-um-camo-tee.jpg",
                "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-grey-hoodie-bigpic.jpg",
-               "navyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-navy-hoodie.jpg"
+               "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-black-hoodie.jpg",
+               "darkolivegreenhoodie": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-camo-hoodie.jpg"
            }
         },
         "womens": {
@@ -225,12 +229,7 @@
            },
         "quantity": 50,
         "theme": "music",
-        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/5a9cd259-0b9c-4bf0-b096-e6f4d17bb64e_tupac-um.png",
-        "featured": true,
-        "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/tupac-um-navy-hoodie.jpg",
-        "featured_gender": "mens",
-        "featured_key": "hoodie",
-        "featured_color": "navyhoodie"
+        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/5a9cd259-0b9c-4bf0-b096-e6f4d17bb64e_tupac-um.png"
      },
     {
        "id": 5,
@@ -306,13 +305,11 @@
          ], 
          "colors": {
              "tee": ["grey", "black", "darkolivegreen"],
-             "hoodie": ["grey", "navy", "black", "darkolivegreen", "royalblue"]
+             "hoodie": ["grey", "black", "darkolivegreen"]
         },      
         "colorPics": {
          "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-grey-hoodie.jpg",
-         "navyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-navy-hoodie.jpg",
          "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-black-hoodie.jpg",
-         "royalbluehoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-royal-blue-hoodie.jpg",
          "darkolivegreenhoodie": "https://s3.amazonaws.com/yawastore/hoodies/welly-camo-hoodie.jpg",
          "greytee": "https://s3.amazonaws.com/yawastore/tees/welly-dark-heather-tee.jpg",
          "blacktee": "https://s3.amazonaws.com/yawastore/tees/welly-mens-black-tee.jpg",
@@ -345,11 +342,12 @@
        "quantity": 50,
        "theme": "nature",
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/9f4533e0-74fa-47ef-8237-7e1a4ed1e66b_wellys-head.png",
+       "popular": true,
        "featured": true,
        "featured_key": "hoodie",
-       "featured_color": "royalbluehoodie",
+       "featured_color": "blackhoodie",
        "featured_gender": "mens",
-       "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/welly-royal-blue-hoodie.jpg"
+       "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/welly-black-hoodie.jpg"
     },
     {
        "id": 7,
@@ -406,6 +404,7 @@
        "quantity": 50,
        "theme": "sports",
        "pic": "https://s3.amazonaws.com/yawastore/general-artwork/ali.jpg",
+       "popular": true,
        "featured": true,
        "featured_gender": "mens",
        "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/ali-camo-hoodie.jpg",
@@ -487,14 +486,13 @@
          ],  
          "colors": {
              "tee": ["grey", "black", "darkolivegreen"],
-             "hoodie": ["grey", "navy", "black", "darkolivegreen"]
+             "hoodie": ["grey", "black", "darkolivegreen"]
         },   
         "colorPics": {
             "greytee": "https://s3.amazonaws.com/yawastore/tees/django-heather-dark-tee.jpg",
             "blacktee": "https://s3.amazonaws.com/yawastore/tees/django-mens-black-tee.jpg",
             "darkolivegreentee": "https://s3.amazonaws.com/yawastore/tees/django-camo-tee.jpg",
             "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/django-grey-hoodie.jpg",
-            "navyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/django-navy-hoodie.jpg",
             "blackhoodie": "https://s3.amazonaws.com/yawastore/hoodies/django-black-hoodie.jpg",
             "darkolivegreenhoodie": "https://s3.amazonaws.com/yawastore/hoodies/django-camo-hoodie.jpg"
         }

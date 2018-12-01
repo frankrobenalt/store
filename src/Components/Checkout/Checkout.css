@@ -8,6 +8,7 @@ form input, .location-search-input, .form-row input, .email {
 form button, .fake-button {
     text-align: center;
     padding: 15px;
+    background: linear-gradient(to right,#4d03e2, #a40ced);
     background-color: #6B2DE8;
     color: white;
     font-size: 1.5em;

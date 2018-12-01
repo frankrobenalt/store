@@ -3,7 +3,9 @@ import ProductCard from '../ProductCard/ProductCard';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import data from '../../../data/product.json';
-import coasterData from '../../../data/coasters.json';
+import TopButtons from "./TopButtons";
+import Footer from '../Footer/Footer';
+import AdBanner from "./AdBanner";
 
 export default class Home extends Component{
     constructor(){
@@ -19,23 +21,6 @@ export default class Home extends Component{
         this.setState({
             products: data
         })
-        // let delay = 0;
-        // let ducts = document.querySelectorAll('.product-grid');
-        // setTimeout(() => {
-        //     ducts.forEach(duct => {
-        //         duct.childNodes.forEach(cur => {
-        //             cur.style.transitionDelay = delay + 'ms';
-        //             delay += 200;
-        //         })
-        //     })
-        // }, 50);
-        // setTimeout(() => {
-        //     ducts.forEach(duct => {
-        //         duct.childNodes.forEach(cur => {
-        //             cur.classList.remove('b4-home-anim');
-        //         })
-        //     })
-        // }, 100);
     }
 
   render(){
@@ -44,11 +29,13 @@ export default class Home extends Component{
               <ProductCard prod={prod} full={true} key={prod.id} />
           )
       });
-      const coasterSets = coasterData.map( prod => {
-          return (
-              <ProductCard prod={prod} theme={true} key={prod.id} />
-          )
-      })
+      let popularProducts = this.state.products.map( prod => {
+          if(prod.popular){
+              return (
+                <ProductCard prod={prod} full={true} key={prod.id} />
+              )
+          }
+      });
       let featuredProducts = this.state.products.map( prod => {
           if(prod.featured){
               return (
@@ -56,28 +43,24 @@ export default class Home extends Component{
               )
           }
       });
+      
     return(
         <div className="main-container">
-<div className="section-header">featured designs</div>
-        <div className="product-grid">
-            { featuredProducts }
-        </div>
-<div className="section-header">all designs</div>
-        <div className="product-grid">
-            { products }
-        </div>
-        {/* <div className="section-header">Coaster Set</div>
-        <div className="product-grid">
-            { coasterSets }
-        </div> */}
-        {/* <div className="section-header">Tees &amp; Hoodies</div>
-        <div className="product-grid">
-            { teesAndHoodies }
-        </div> */}
-        {/* <div className="section-header">Coloring Book</div>
-        <div className="product-grid">
-     
-        </div> */}
+            <TopButtons />
+            <AdBanner />
+            <div className="section-header">featured products</div>
+            <div className="product-grid">
+                { featuredProducts }
+            </div>
+            <div className="section-header">popular designs</div>
+            <div className="product-grid">
+                { popularProducts }
+            </div>
+            <div className="section-header">all designs</div>
+            <div className="product-grid">
+                { products }
+            </div>
+            <Footer />
         </div>
     )
 }

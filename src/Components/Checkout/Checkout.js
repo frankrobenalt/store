@@ -5,6 +5,7 @@ import { StripeProvider } from 'react-stripe-elements';
 import { setCart } from '../../ducks/reducer';
 import './Checkout.css';
 import CheckoutForm from './CheckoutForm';
+import Footer from '../Footer/Footer';
 
 class Checkout extends Component {
     constructor(props){
@@ -102,6 +103,7 @@ class Checkout extends Component {
                     </div>
                 </div>
                 }
+                <Footer />
             </div>
         )
     }

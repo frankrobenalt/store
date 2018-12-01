@@ -7,6 +7,7 @@ import data from '../../../data/product.json';
 import {connect} from 'react-redux';
 import { addToCart } from '../../ducks/reducer';
 import { withRouter } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 class ProductLanding extends Component{
     constructor(){
@@ -273,6 +274,7 @@ class ProductLanding extends Component{
                 </div>
                 </div>
                 }
+                <Footer />
             </div>
         )
     }

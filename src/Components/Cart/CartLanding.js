@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import { removeFromCart } from '../../ducks/reducer';
 import './Cart.css';
+import Footer from '../Footer/Footer';
 
 class CartLanding extends Component {
     constructor(){
@@ -106,6 +107,7 @@ class CartLanding extends Component {
                         </Link>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

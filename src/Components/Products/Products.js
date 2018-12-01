@@ -2,6 +2,8 @@ import React, { Component} from "react";
 import ProductCard from '../ProductCard/ProductCard';
 // import CoasterPack from './CoasterPack';
 import data from '../../../data/product.json';
+import TopButtons from '../Home/TopButtons';
+import Footer from '../Footer/Footer';
 
 export default class Products extends Component{
     constructor(){
@@ -49,6 +51,7 @@ export default class Products extends Component{
         })
         return (
             <div className="main-container">
+                <TopButtons />
                 {/* { this.props.match.params.theme === 'coaster' &&
                     <CoasterPack />
                 } */}
@@ -56,6 +59,7 @@ export default class Products extends Component{
                 <div className="product-grid">
                     { products }
                 </div>
+                <Footer />
             </div>
         )
     }

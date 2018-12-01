@@ -188,7 +188,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0, 0, .69);
+    background: linear-gradient(to right, #a60ceda9, #4d03e2af);
+    /* background-color: rgba(0,0, 0, .69); */
     color: white;
     opacity: 0;
     transition: 200ms opacity;
@@ -265,4 +266,118 @@
 .red {
     color: rgb(252, 104, 104);
     margin-bottom: 10px;
+}
+.filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    text-align: center;
+    padding: 20px 5px;
+    width: 150px;
+    background: linear-gradient(to right,#4d03e2, #a40ced);
+    background-color: #6B2DE8;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.filter-container a {
+    text-decoration: none;
+}
+
+.btn-margin {
+    margin: 0px 20px;
+}
+
+.ad-banner-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    box-shadow: 0px 0px 10px black inset;
+    background-color: #fafafa;
+    border-radius: 10px;
+    background: linear-gradient(to left,#4d03e2, #a40ced);
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-text {
+    color: white;
+    font-size: 3em;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+/* .banner-text span {
+    font-size: 2em;
+    text-transform: uppercase;
+} */
+
+.ad-banner-container > a {
+    border-radius: 10px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    box-shadow: 0px 0px 10px black;
+}
+
+.ad-banner-container a > .btn-primary {
+    /* background: #4d03e2; */
+    background: #ff00f3;
+}
+
+.slider-container {
+    position: absolute;
+    right: 20%;
+    top: 25px;
+    width: 450px;
+    display: flex;
+    transition: transform 500ms;
+    overflow: visible;
+}
+
+.slider-container img {
+    width: 350px;
+    height: 350px;
+    margin: 0px;
+    transition: opacity 500ms;
+}
+
+.inactive {
+    opacity: 0.1;
+}
+
+@media (max-width: 600px) {
+    .banner-text {
+        top: 20px;
+        left: 20px;
+    }
+    .slider-container img {
+        height: 150px;
+        width: 150px;
+    }
+    .slider-container {
+        left: 175px;
+        top: 15px;
+    }
+    .ad-banner-container {
+        height: 300px;
+    }
+    .ad-banner-container > a {
+        left: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 500px){
+    .btn-margin {
+        margin: 10px 10px;
+    }
 }
