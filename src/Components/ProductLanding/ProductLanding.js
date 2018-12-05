@@ -252,7 +252,7 @@ class ProductLanding extends Component{
                     </div>
                     <div>
                         <div className="product-info-div pp-info-title">products:</div>
-                        { this.state.gender === 'mens' ?
+                        {/* { this.state.gender === 'mens' ?
                             <div className="gender-wrapper">
                                 <div className="selected-gender" onClick={()=>this.changeGender('mens')}>mens</div>
                                 <div onClick={()=>this.changeGender('womens')}>womens</div>
@@ -262,7 +262,7 @@ class ProductLanding extends Component{
                                 <div onClick={()=>this.changeGender('mens')}>mens</div>
                                 <div className="selected-gender" onClick={()=>this.changeGender('womens')}>womens</div>
                             </div>
-                        }
+                        } */}
                         <ProductLines lines={ this.state.productLines } landing={true} id={ product.id } line={this.state.line} changeProd={this.handleProductChange} />
                     </div>
                 </div>

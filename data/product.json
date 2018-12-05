@@ -344,10 +344,10 @@
        "pic": "https://s3.amazonaws.com/usc-cache.salvationarmy.org/9f4533e0-74fa-47ef-8237-7e1a4ed1e66b_wellys-head.png",
        "popular": true,
        "featured": true,
-       "featured_key": "hoodie",
-       "featured_color": "blackhoodie",
+       "featured_key": "tee",
+       "featured_color": "greytee",
        "featured_gender": "mens",
-       "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/welly-black-hoodie.jpg"
+       "featured_pic": "https://s3.amazonaws.com/yawastore/tees/welly-dark-heather-tee.jpg"
     },
     {
        "id": 7,
@@ -372,7 +372,7 @@
         "colorPics": {
          "greyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/ali-grey-hoodie.jpg",
          "navyhoodie": "https://s3.amazonaws.com/yawastore/hoodies/ali-navy-hoodie.jpg",
-         "darkolivegreenhoodie": "https://s3.amazonaws.com/yawastore/hoodies/ali-camo-hoodie.jpg",
+         "darkolivegreenhoodie": "https://s3.amazonaws.com/yawastore/hoodies/ali-newcamo.png",
          "greytee": "https://s3.amazonaws.com/yawastore/tees/heather-ali.jpg",
          "blacktee": "https://s3.amazonaws.com/yawastore/tees/ali-mens-black-tee.jpg",
          "darkolivegreentee": "https://s3.amazonaws.com/yawastore/tees/ali-camo-tee.jpg"
@@ -407,7 +407,7 @@
        "popular": true,
        "featured": true,
        "featured_gender": "mens",
-       "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/ali-camo-hoodie.jpg",
+       "featured_pic": "https://s3.amazonaws.com/yawastore/hoodies/ali-newcamo.png",
        "featured_key": "hoodie",
        "featured_color": "darkolivegreenhoodie"
     },

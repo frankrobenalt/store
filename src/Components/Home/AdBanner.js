@@ -8,11 +8,14 @@ let slider;
 function coasterSlider (){
     let container = document.querySelector('.slider-container');
     let containerNodes = container.childNodes;
+    let newImgContainer = document.createElement('div');
+    newImgContainer.classList.add('inactive');
+    newImgContainer.classList.add('slider-container-img-container');
     let newImg = document.createElement('img');
-    newImg.classList.add('inactive');
-    newImg.src = containerNodes[count].src;
+    newImg.src = containerNodes[count].childNodes[0].src;
     newImg.alt = 'coaster';
-    container.appendChild(newImg);
+    newImgContainer.appendChild(newImg)
+    container.appendChild(newImgContainer);
     if(window.innerWidth < 600){
         translateAmount -= 150;
     } else {
@@ -38,19 +41,40 @@ export default class AdBanner extends Component {
         return (
             <div className="ad-banner-container">
                 <div className="slider-container">
+                    <div className="slider-container-img-container">
                     <img src={coasters[0]} alt="coaster"/>
-                    <img src={coasters[1]} className="inactive" alt="coaster"/>
-                    <img src={coasters[2]} className="inactive" alt="coaster"/>
-                    <img src={coasters[3]} className="inactive" alt="coaster"/>
-                    <img src={coasters[4]} className="inactive" alt="coaster"/>
-                    <img src={coasters[5]} className="inactive" alt="coaster"/>
-                    <img src={coasters[6]} className="inactive" alt="coaster"/>
-                    <img src={coasters[7]} className="inactive" alt="coaster"/>
-                    <img src={coasters[8]} className="inactive" alt="coaster"/>
+                    </div>
+                    <div className="slider-container-img-container inactive">
+                    <img src={coasters[1]} alt="coaster"/>
+                    </div>
+                    <div className="slider-container-img-container inactive">
+                    <img src={coasters[2]} alt="coaster"/>
+                    </div>
+                    <div className="slider-container-img-container inactive">
+                    <img src={coasters[3]} alt="coaster"/>
+                    </div>
+                    <div className="slider-container-img-container inactive">
+                    <img src={coasters[4]} alt="coaster"/>
+                    </div>
+                    <div className="slider-container-img-container inactive">
+                    <img src={coasters[5]} alt="coaster"/>
+                    </div>
+                    <div className="slider-container-img-container inactive">
+                    <img src={coasters[6]} alt="coaster"/>
+                    </div>
+                    <div className="slider-container-img-container inactive">
+                    <img src={coasters[7]} alt="coaster"/>
+                    </div>
+                    <div className="slider-container-img-container inactive">
+                    <img src={coasters[8]} alt="coaster"/>
+                    </div>
+                    <div className="slider-container-img-container inactive">
+                    <img src={coasters[9]} alt="coaster"/>
+                    </div>
                 </div>
                 <div className="banner-text">stock<br />those<br /><span>mf</span><br />stockings</div>
-                <Link to={'/products/coaster'}>
-                <div className="btn-primary">shop coasters</div>
+                <Link to={'/sales'}>
+                <div className="btn-primary">shop best sellers</div>
                 </Link>
             </div>
         )

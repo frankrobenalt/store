@@ -12,7 +12,7 @@ class ProductCard extends Component {
         this.state = {
             normal: false,
             noSize: false,
-            gender: '',
+            gender: 'mens',
             mens: {},
             womens: {},
             product: {},
@@ -204,7 +204,7 @@ class ProductCard extends Component {
                     { this.props.featured &&
                     <div className="product-wrapper">
                         <div className="image">
-                            <Link to={`/product/${prod.id}/${prod.featured_key}/${this.state.gender}`}>
+                            <Link to={`/product/${prod.id}/${prod.featured_key}`}>
                             <div className="overlay">
                                 <div>{ prod.product_name }</div>
                                 <div>explore products</div>
@@ -220,7 +220,7 @@ class ProductCard extends Component {
                             { prod.featured_key === 'tee' && <span>25</span> }
                             { prod.featured_key === 'hoodie' && <span>50</span> }
                         </div>
-                        { this.state.gender === 'mens' ?
+                        {/* { this.state.gender === 'mens' ?
                             <div className="gender-wrapper">
                                 <div className="selected-gender" onClick={()=>this.changeGender('mens')}>mens</div>
                                 <div onClick={()=>this.changeGender('womens')}>womens</div>
@@ -230,7 +230,7 @@ class ProductCard extends Component {
                                 <div onClick={()=>this.changeGender('mens')}>mens</div>
                                 <div className="selected-gender" onClick={()=>this.changeGender('womens')}>womens</div>
                             </div>
-                        }
+                        } */}
                         { prod.featured_key !== 'coaster' &&
                         <div>
                             <div className="product-info-div big-text">colors</div>
@@ -282,7 +282,7 @@ class ProductCard extends Component {
                 { this.props.filter &&
                 <div className="product-wrapper">
                     <div className="image">
-                        <Link to={`/product/${prod.id}/${this.state.line}/${this.state.gender}`}>
+                        <Link to={`/product/${prod.id}/${this.state.line}`}>
                         <div className="overlay">
                             <div>{ prod.product_name }</div>
                             <div>explore products</div>
@@ -300,7 +300,7 @@ class ProductCard extends Component {
                         </div>
                         { this.state.line !== 'coaster' &&
                         <div style={{ 'width': '100%' }}>
-                        { this.state.gender === 'mens' ?
+                        {/* { this.state.gender === 'mens' ?
                             <div className="gender-wrapper">
                                 <div className="selected-gender" onClick={()=>this.changeGender('mens')}>mens</div>
                                 <div onClick={()=>this.changeGender('womens')}>womens</div>
@@ -310,7 +310,7 @@ class ProductCard extends Component {
                                 <div onClick={()=>this.changeGender('mens')}>mens</div>
                                 <div className="selected-gender" onClick={()=>this.changeGender('womens')}>womens</div>
                             </div>
-                        }
+                        } */}
                         <div>
                             <div className="product-info-div big-text">colors</div>
                             <div className="colors-container">
